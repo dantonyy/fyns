@@ -24,7 +24,7 @@
               <!-- Nested Row within Card Body -->
                 <div class="p-5">
                   <div class="text-center">
-                    <h1 class="h4 text-gray-900 mb-4">Central de Percepções <br> Sistema de Avaliação de Disciplinas e Cursos <br></h1>
+                    <h1 class="h4 text-gray-900 mb-4">Título</h1>
                   </div>
 
                     <?php if(isset($alerta)){ ?>

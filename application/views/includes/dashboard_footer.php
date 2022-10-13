@@ -1,75 +1,77 @@
-<footer class="footer">
-        <div class="container-fluid">
-          <ul class="nav">
-            <li class="nav-item">
-              <a href="javascript:void(0)" class="nav-link">
-                Creative Tim
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="javascript:void(0)" class="nav-link">
-                About Us
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="javascript:void(0)" class="nav-link">
-                Blog
-              </a>
-            </li>
-          </ul>
-          <div class="copyright">
-            ©
-            <script>
-              document.write(new Date().getFullYear())
-            </script>2018 made with <i class="tim-icons icon-heart-2"></i> by
-            <a href="javascript:void(0)" target="_blank">Creative Tim</a> for a better web.
-          </div>
+<footer class="text-center">
+        <div class="mb-2">
+          <small>
+            © 2022 made with <i class="fa fa-heart" style="color:red"></i> by - <a target="_blank" rel="noopener noreferrer" href="https://azouaoui.netlify.com">
+              Mohamed Azouaoui
+            </a>
+          </small>
+        </div>
+        <div>
+          <a href="https://github.com/azouaoui-med" target="_blank">
+            <img alt="GitHub followers" src="https://img.shields.io/github/followers/azouaoui-med?label=github&style=social" />
+          </a>
+          <a href="https://twitter.com/azouaoui_med" target="_blank">
+            <img alt="Twitter Follow" src="https://img.shields.io/twitter/follow/azouaoui_med?label=twitter&style=social" />
+          </a>
         </div>
       </footer>
     </div>
-  </div>
-  <div class="fixed-plugin">
-    <div class="dropdown show-dropdown">
-      <a href="#" data-toggle="dropdown">
-        <i class="fa fa-cog fa-2x"> </i>
-      </a>
-      <ul class="dropdown-menu">
-        <li class="header-title"> Sidebar Background</li>
-        <li class="adjustments-line">
-          <a href="javascript:void(0)" class="switch-trigger background-color">
-            <div class="badge-colors text-center">
-              <span class="badge filter badge-primary active" data-color="primary"></span>
-              <span class="badge filter badge-info" data-color="blue"></span>
-              <span class="badge filter badge-success" data-color="green"></span>
-            </div>
-            <div class="clearfix"></div>
-          </a>
-        </li>
-        <li class="adjustments-line text-center color-change">
-          <span class="color-label">LIGHT MODE</span>
-          <span class="badge light-badge mr-2"></span>
-          <span class="badge dark-badge ml-2"></span>
-          <span class="color-label">DARK MODE</span>
-        </li>
-        <li class="button-container">
-          <a href="https://www.creative-tim.com/product/black-dashboard" target="_blank" class="btn btn-primary btn-block btn-round">Download Now</a>
-          <a href="https://demos.creative-tim.com/black-dashboard/docs/1.0/getting-started/introduction.html" target="_blank" class="btn btn-default btn-block btn-round">
-            Documentation
-          </a>
-        </li>
-        <li class="header-title">Thank you for 95 shares!</li>
-        <li class="button-container text-center">
-          <button id="twitter" class="btn btn-round btn-info"><i class="fab fa-twitter"></i> &middot; 45</button>
-          <button id="facebook" class="btn btn-round btn-info"><i class="fab fa-facebook-f"></i> &middot; 50</button>
-          <br>
-          <br>
-          <a class="github-button" href="https://github.com/creativetimofficial/black-dashboard" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star ntkme/github-buttons on GitHub">Star</a>
-        </li>
-      </ul>
-    </div>
-  </div>
- 
+  </main>
+  <!-- page-content" -->
+</div>
+<!-- page-wrapper -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    
+</body>
+
+</html>
+      <!-- End Navbar -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.esm.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.esm.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.mjs"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/helpers.esm.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/helpers.esm.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/helpers.mjs"></script>
   <script>
+
+    jQuery(function ($) {
+
+    $(".sidebar-dropdown > a").click(function() {
+    $(".sidebar-submenu").slideUp(200);
+    if (
+    $(this)
+      .parent()
+      .hasClass("active")
+    ) {
+    $(".sidebar-dropdown").removeClass("active");
+    $(this)
+      .parent()
+      .removeClass("active");
+    } else {
+    $(".sidebar-dropdown").removeClass("active");
+    $(this)
+      .next(".sidebar-submenu")
+      .slideDown(200);
+    $(this)
+      .parent()
+      .addClass("active");
+    }
+    });
+
+    $("#close-sidebar").click(function() {
+    $(".page-wrapper").removeClass("toggled");
+    });
+    $("#show-sidebar").click(function() {
+    $(".page-wrapper").addClass("toggled");
+    });
+    });
+
     $(document).ready(function() {
       $().ready(function() {
         $sidebar = $('.sidebar');
@@ -337,6 +339,112 @@
         });
       });
     });
+
+
+    function criarGraficoBarras(id_pergunta, pergunta, dominios, verde, amarelo, vermelho){
+        var divColuna = document.createElement('DIV');
+        divColuna.setAttribute("class", "col-md-12");
+        var divCard = document.createElement('DIV');
+        divCard.setAttribute("class", "card");
+        var divCardHeader = document.createElement('DIV');
+        divCardHeader.setAttribute("class", "card-header");
+        var divCardTitle = document.createElement('DIV');
+        divCardTitle.setAttribute("class", "card-title");
+        divCardTitle.innerHTML = pergunta;
+        var divCardBody = document.createElement('DIV');
+        divCardBody.setAttribute("class", "card-body");
+        var divChartContainer = document.createElement('DIV');
+        divChartContainer.setAttribute("class", "chart-container");
+        var divCSM = document.createElement('DIV');
+        divCSM.setAttribute("class", "chartjs-size-monitor");
+        divCSM.setAttribute("style", "position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;");
+        var divCSME = document.createElement('DIV');
+        divCSME.setAttribute("class", "chartjs-size-monitor-expand");
+        divCSME.setAttribute("style", "position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;");
+        var divCSMS = document.createElement('DIV');
+        divCSMS.setAttribute("class", "chartjs-size-monitor-shrink");
+        divCSMS.setAttribute("style", "position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;");    
+        var divStyle1 = document.createElement('DIV');
+        divStyle1.setAttribute("style", "position:absolute;width:1000000px;height:1000000px;left:0;top:0;");
+        var divStyle2 = document.createElement('DIV');
+        divStyle2.setAttribute("style", "position:absolute;width:200%;height:200%;left:0; top:0;");
+        var canvas = document.createElement('canvas');
+        canvas.setAttribute("style", "width: 380px; height: 300px; display: block;");
+        canvas.setAttribute("width", "760");
+        canvas.setAttribute("height", "600");
+        canvas.setAttribute("class", "chartjs-render-monitor");
+        canvas.setAttribute("id", "chart_" + id_pergunta);
+
+        //Unir as divs
+        divCSMS.appendChild(divStyle2);
+        divCSME.appendChild(divStyle1);
+        divCSM.appendChild(divCSME);
+        divCSM.appendChild(divCSMS);
+        divChartContainer.appendChild(divCSM);
+        divChartContainer.appendChild(canvas);
+        divCardBody.appendChild(divChartContainer);
+        divCardHeader.appendChild(divCardTitle);
+        divCard.appendChild(divCardHeader);
+        divCard.appendChild(divCardBody);
+        divColuna.appendChild(divCard);
+
+        var multipleBarChart = canvas.getContext('2d');
+        var color = Chart.helpers.color;
+
+        var myMultipleBarChart = new Chart(multipleBarChart, {
+            type: 'bar',
+            data: {
+                labels: dominios,
+                datasets : [{
+                    label: "Verde",
+                    backgroundColor: '#46D24A',
+                    borderColor: '#46D24A',
+                    data: verde,
+                },{
+                    label: "Amarelo",
+                    backgroundColor: '#FFB559',
+                    borderColor: '#FFB559',
+                    data: amarelo,
+                }, {
+                    label: "Vermelho",
+                    backgroundColor: '#F36A71',
+                    borderColor: '#F36A71',
+                    data: vermelho,
+                }],
+            },
+            options: {
+                responsive: true, 
+                maintainAspectRatio: false,
+                legend: {
+                    position : 'bottom'
+                },
+                title: {
+                    display: true,
+                    text: pergunta
+                },
+                tooltips: {
+                    mode: 'index',
+                    intersect: false
+                },
+                responsive: true,
+                scales: {
+                    xAxes: [{
+                        stacked: true,
+                        
+                    }],
+                    yAxes: [{
+                        stacked: true, 
+                        ticks: {
+                            stepSize: 1
+                        }
+                                       
+                    }]
+                },
+                parsing: false
+            }
+        });
+        return divColuna;
+    }
   </script>
   <script>
     $(document).ready(function() {

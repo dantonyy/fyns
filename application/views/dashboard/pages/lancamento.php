@@ -1,14 +1,12 @@
- <style>
+<style>
   /*------------------------------------------------------------------
   [Master Stylesheet]
-
   Project    	: Aether
   Version		: 1.0
   Last change	: 2015/03/27
   -------------------------------------------------------------------*/
   /*------------------------------------------------------------------
   [Table of contents]
-
   1. General Structure
   2. Anchor Link
   3. Text Outside the Box
@@ -357,7 +355,6 @@
                       <div class="form-group">
                         <label for="valor" class="sr-only">Valor</label>
                         <input type='currency' value="0"  class="form-control" id="valor" name="valor" placeholder="Valor" />
-                        <input type="number" step="0.01" name="quantity" min="0.01">
                       </div>
 
                       <div class="form-group">

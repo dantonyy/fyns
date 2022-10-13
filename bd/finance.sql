@@ -140,8 +140,8 @@ CREATE TABLE IF NOT EXISTS `lancamentos` (
   `id_banco` int(11) NOT NULL,
   `tipo_id` int(11) NOT NULL,
   `categoria_id` int(11) NOT NULL,
-  `data` varchar(11) NOT NULL,
-  `valor` varchar(11) NOT NULL,
+  `data` date NOT NULL,
+  `valor` float(9) NOT NULL,
   `descricao` varchar(250),
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
@@ -185,3 +185,26 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `data`
+--
+
+DROP TABLE IF EXISTS `data`;
+CREATE TABLE IF NOT EXISTS `data` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `data_inicial` date NOT NULL,
+  `data_final` date NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=22 DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `data`
+--
+
+INSERT INTO `data` (`id`, `data_inicial`, `data_final`) VALUES
+(1, '2022-10-01', '2022-10-31'),
+(2, '2022-10-01', '2022-10-31'),
+(3, '2022-10-01', '2022-10-31');
