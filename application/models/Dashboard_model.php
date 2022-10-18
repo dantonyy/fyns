@@ -70,10 +70,24 @@ class Dashboard_model extends CI_Model {
         $dados = $this->db->get()->result();
         return $dados;
     }
-
-    public function get_categorias(){
+    
+    public function get_categoria_lancamentos(){
         $dados = NULL;
-        $this->db->from('categorias');
+        $this->db->from('categoria_lancamentos');
+        $dados = $this->db->get()->result();
+        return $dados;
+    }
+
+    public function get_categoria_despesas(){
+        $dados = NULL;
+        $this->db->from('categoria_despesas');
+        $dados = $this->db->get()->result();
+        return $dados;
+    }
+
+    public function get_categoria_receitas(){
+        $dados = NULL;
+        $this->db->from('categoria_receitas');
         $dados = $this->db->get()->result();
         return $dados;
     }
@@ -85,12 +99,11 @@ class Dashboard_model extends CI_Model {
         return $dados;
     }
     
-    public function lancar($id_user,$id_banco,$tipo_id,$categoria_id,$data,$valor,$descricao){
+    public function lancar($id_user,$id_banco,$categoria_id,$data,$valor,$descricao){
 
         $dados = array(
             'id_user' => $id_user,
             'id_banco'  => $id_banco,
-            'tipo_id'  => $tipo_id,
             'categoria_id' => $categoria_id,
             'data' => $data,
             'valor' => $valor,
@@ -100,25 +113,6 @@ class Dashboard_model extends CI_Model {
         $result = $this->db->insert('lancamentos', $dados);
 
         return $result;
-    }
-
-    public function ultimos_lancamentos(){
-        $data = $this->dashboard_model->getDate();
-        if($data != "now"){
-            $data_inicial = $data->data_inicial;
-            $data_final = $data->data_final;
-        }else{
-            $data_inicial = "now";
-            $data_final = "now";
-        }
-
-        $this->db->from('lancamentos');
-        $this->db->where('data >=', $data_inicial);
-        $this->db->where('data <=', $data_final);
-        $this->db->order_by("data", "desc");
-
-        $res = $this->db->get()->result();
-        return $res;
     }
 
     public function ultimas_despesas(){
@@ -134,7 +128,7 @@ class Dashboard_model extends CI_Model {
         }
 
         $this->db->from('lancamentos');
-        $this->db->where_in('tipo_id','2');
+        $this->db->where('lancamento_tipo', '2');
         $this->db->where('data >=', $data_inicial);
         $this->db->where('data <=', $data_final);
         $this->db->order_by("data", "desc");
@@ -154,7 +148,7 @@ class Dashboard_model extends CI_Model {
         }
 
         $this->db->from('lancamentos');
-        $this->db->where_in('tipo_id','1');
+        $this->db->where('lancamento_tipo', '1');
         $this->db->where('data >=', $data_inicial);
         $this->db->where('data <=', $data_final);
         $this->db->order_by("data", "desc");

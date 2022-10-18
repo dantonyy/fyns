@@ -13,8 +13,9 @@ class Dashboard extends CI_Controller {
         
         $data['bancos'] = $this->dashboard_model->get_bancos();
         $data['lancamentos_tipo'] = $this->dashboard_model->get_lancamentosTipo();
-        $data['categorias'] = $this->dashboard_model->get_categorias();
-        $data['ultimos_lancamentos'] = $this->dashboard_model->ultimos_lancamentos();
+        $data['categoria_lancamentos'] = $this->dashboard_model->get_categoria_lancamentos();
+        $data['categorias_despesas'] = $this->dashboard_model->get_categoria_despesas();
+        $data['categorias_receitas'] = $this->dashboard_model->get_categoria_receitas();
         $data['ultimas_despesas'] = $this->dashboard_model->ultimas_despesas();
         $data['ultimas_receitas'] = $this->dashboard_model->ultimas_receitas();
 
@@ -59,7 +60,8 @@ class Dashboard extends CI_Controller {
 
         $data['bancos'] = $this->dashboard_model->get_bancos();
         $data['lancamentos_tipo'] = $this->dashboard_model->get_lancamentosTipo();
-        $data['categorias'] = $this->dashboard_model->get_categorias();
+        $data['categorias_despesas'] = $this->dashboard_model->get_categoria_despesas();
+        $data['categorias_receitas'] = $this->dashboard_model->get_categoria_receitas();
         
 
         $this->load->view('includes/dashboard_header');
@@ -68,17 +70,29 @@ class Dashboard extends CI_Controller {
         $this->load->view('includes/html_footer_full.php');
     }
 
-    public function lancar(){
+    public function lancar_despesa(){
 
         $id_user =      $this->input->post('id_user');
         $id_banco =     $this->input->post('id_banco');
-        $tipo_id =      $this->input->post('tipo_id');
         $categoria_id = $this->input->post('categoria_id');
         $data =         $this->input->post('data');
         $valor =        $this->input->post('valor');
         $descricao =    $this->input->post('descricao');
 
-        $this->dashboard_model->lancar($id_user,$id_banco,$tipo_id,$categoria_id,$data,$valor,$descricao);
+        $this->dashboard_model->lancar_despesa($id_user,$id_banco,$categoria_id,$data,$valor,$descricao);
+        // $this->output->set_output($result);
+    }
+
+    public function lancar_receita(){
+
+        $id_user =      $this->input->post('id_user');
+        $id_banco =     $this->input->post('id_banco');
+        $categoria_id = $this->input->post('categoria_id');
+        $data =         $this->input->post('data');
+        $valor =        $this->input->post('valor');
+        $descricao =    $this->input->post('descricao');
+
+        $this->dashboard_model->lancar_receita($id_user,$id_banco,$categoria_id,$data,$valor,$descricao);
         // $this->output->set_output($result);
     }
 

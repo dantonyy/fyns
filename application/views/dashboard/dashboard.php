@@ -212,7 +212,7 @@ $saldo = $sum_receita_total - $sum_desp_total;
                       }
 
                     
-                      foreach ($categorias as $categoria) {
+                      foreach ($categorias_despesas as $categoria) {
                         echo '<tr>';
                         echo '<td class="text-center">';
                         echo ''.$categoria->nome.'';
@@ -225,8 +225,12 @@ $saldo = $sum_receita_total - $sum_desp_total;
                         echo '<td class="text-center">';
                         $val = 0;
                         foreach ($ultimas_despesas as $despesas){
-                          if ($despesas->categoria_id == $categoria->id){
+                          if ($despesas->lancamento_categoria == $categoria->id){
                             $val += (float)$despesas->valor;
+                          } elseif ($despesas->lancamento_categoria == '0') {
+                            if ($despesas->r_d_categoria == $categoria->id){
+                              $val += (float)$despesas->valor;
+                            }
                           };
                         }
                         echo ''.$val.'';
@@ -297,47 +301,27 @@ $saldo = $sum_receita_total - $sum_desp_total;
                       }
 
                     
-                      //foreach ($categorias as $categoria) {
+                      foreach ($categorias_receitas as $categoria) {
                         echo '<tr>';
                         echo '<td class="text-center">';
-                        echo "FIXO";
+                        echo ''.$categoria->nome.'';
                         echo '</td>';
                       
                         echo '<td class="text-center">';
-                        echo 'Receita';
+                        echo 'Despesa';
                         echo '</td>';
 
                         echo '<td class="text-center">';
                         $val = 0;
                         foreach ($ultimas_receitas as $receitas){
-                          if ($receitas->categoria_id == '6'){
+                          if ($receitas->r_d_categoria == $categoria->id){
                             $val += (float)$receitas->valor;
                           };
                         }
                         echo ''.$val.'';
                         echo '</td>';
                         echo '</tr>';
-                      //}
-
-                      echo '<tr>';
-                        echo '<td class="text-center">';
-                        echo "PIX";
-                        echo '</td>';
-                      
-                        echo '<td class="text-center">';
-                        echo 'Receita';
-                        echo '</td>';
-
-                        echo '<td class="text-center">';
-                        $val = 0;
-                        foreach ($ultimas_receitas as $receitas){
-                          if ($receitas->categoria_id == '16'){
-                            $val += (float)$receitas->valor;
-                          };
-                        }
-                        echo ''.$val.'';
-                        echo '</td>';
-                        echo '</tr>';
+                      }
 
                       echo '<tr>';
 
@@ -380,7 +364,7 @@ $saldo = $sum_receita_total - $sum_desp_total;
             <div class="card-header text-center">
                   <div class="row">
                       <div class="col-md-12" style="margin-bottom:20px;">
-                          <div class="card-title fw-mediumbold"><h6 class="card-title">Últimos Lançamentos - Receitas</h6></div>    
+                          <div class="card-title fw-mediumbold"><h6 class="card-title">Últimos Lançamentos - Despesas</h6></div>    
                       </div>
                   </div>
               </div>
@@ -413,23 +397,23 @@ $saldo = $sum_receita_total - $sum_desp_total;
                     </thead>
                     <tbody>
                       <?php
-                      foreach ($ultimos_lancamentos as $lancamentos){
+                      foreach ($ultimas_despesas as $lancamentos){
                         foreach ($lancamentos_tipo as $tipo) {
-                          if ($lancamentos->tipo_id == $tipo->id && $tipo->nome == "Receita"){
+                          if ($lancamentos->lancamento_tipo == $tipo->id && $tipo->nome == "Despesa"){
                             echo '<tr>';
                             echo '<td class="text-center">';
                             echo ''.$lancamentos->data.'';
                             echo '</td>';
                             echo '<td class="text-center">';
                             foreach ($lancamentos_tipo as $tipo) {
-                              if ($lancamentos->tipo_id == $tipo->id){
+                              if ($lancamentos->lancamento_tipo == $tipo->id){
                                 echo ''.$tipo->nome.'';
                               }
                             }
                             echo '</td>';
                             echo '<td class="text-center">';
-                            foreach ($categorias as $categoria) {
-                              if ($lancamentos->categoria_id == $categoria->id){
+                            foreach ($categoria_lancamentos as $categoria) {
+                              if ($lancamentos->lancamento_categoria == $categoria->id){
                                 echo ''.$categoria->nome.'';
                               }
                             }
@@ -464,7 +448,7 @@ $saldo = $sum_receita_total - $sum_desp_total;
             <div class="card-header text-center">
                 <div class="row">
                     <div class="col-md-12" style="margin-bottom:20px;">
-                        <div class="card-title fw-mediumbold"><h6 class="card-title">Últimos Lançamentos - Despesas</h6></div>    
+                        <div class="card-title fw-mediumbold"><h6 class="card-title">Últimos Lançamentos - Receitas</h6></div>    
                     </div>
                 </div>
             </div>
@@ -497,23 +481,24 @@ $saldo = $sum_receita_total - $sum_desp_total;
                     </thead>
                     <tbody>
                       <?php
-                      foreach ($ultimos_lancamentos as $lancamentos){
+                      //var_dump($categoria_lancamentos);
+                      foreach ($ultimas_receitas as $lancamentos){
                         foreach ($lancamentos_tipo as $tipo) {
-                          if ($lancamentos->tipo_id == $tipo->id && $tipo->nome == "Despesa"){
+                          if ($lancamentos->lancamento_tipo == $tipo->id && $tipo->nome == "Receita"){
                             echo '<tr>';
                             echo '<td class="text-center">';
                             echo ''.$lancamentos->data.'';
                             echo '</td>';
                             echo '<td class="text-center">';
                             foreach ($lancamentos_tipo as $tipo) {
-                              if ($lancamentos->tipo_id == $tipo->id){
+                              if ($lancamentos->lancamento_tipo == $tipo->id){
                                 echo ''.$tipo->nome.'';
                               }
                             }
                             echo '</td>';
                             echo '<td class="text-center">';
-                            foreach ($categorias as $categoria) {
-                              if ($lancamentos->categoria_id == $categoria->id){
+                            foreach ($categoria_lancamentos as $categoria) {
+                              if ($lancamentos->lancamento_categoria == $categoria->id){
                                 echo ''.$categoria->nome.'';
                               }
                             }
