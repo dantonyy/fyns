@@ -368,7 +368,6 @@
                 <input type="text" id="password" class="fadeIn third" name="login" placeholder="password"> -->
 
                 <input type="submit" class="fadeIn fourth lancar" id="lancar" name="lancar" onclick="lancar()" value="Efetuar Lançamento">
-                <button class="fadeIn fourth lancar" id="lancar" name="lancar" onclick="lancar()" >Efetuar Lançamento</button>
               <!-- </form> -->
               </div>
 
@@ -441,7 +440,7 @@
     var descricao = document.getElementById('descricao').value;
     var lancamento_categoria = getSelectedOption(categorias).value;
 
-    console.log(id_user, id_banco, tipo_id, r_d_categoria, lancamento_categoria, data, valor, descricao);
+    //console.log(id_user, id_banco, tipo_id, r_d_categoria, lancamento_categoria, data, valor, descricao);
 
     $.ajaxSetup({async:false});
     $.post("<?php echo site_url('dashboard/lancar') ?>",{id_user:id_user, id_banco:id_banco, lancamento_tipo:tipo_id, r_d_categoria:r_d_categoria, lancamento_categoria:lancamento_categoria, data:data, valor:valor, descricao:descricao},
