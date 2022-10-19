@@ -34,7 +34,7 @@ class Dashboard_model extends CI_Model {
 
     public function getDateDespesa(){
         $this->db->from('data');
-        $this->db->where_in('id','1');
+        $this->db->where_in('id','2');
         
         $dados = $this->db->get()->row();
         if($dados == NULL){
@@ -50,7 +50,7 @@ class Dashboard_model extends CI_Model {
 
     public function getDateReceita(){
         $this->db->from('data');
-        $this->db->where_in('id','2');
+        $this->db->where_in('id','1');
         
         $dados = $this->db->get()->row();
         if($dados == NULL){
@@ -99,12 +99,14 @@ class Dashboard_model extends CI_Model {
         return $dados;
     }
     
-    public function lancar($id_user,$id_banco,$categoria_id,$data,$valor,$descricao){
+    public function lancar($id_user, $id_banco, $lancamento_tipo, $r_d_categoria, $lancamento_categoria, $data, $valor, $descricao){
 
         $dados = array(
             'id_user' => $id_user,
             'id_banco'  => $id_banco,
-            'categoria_id' => $categoria_id,
+            'lancamento_tipo' => $lancamento_tipo,
+            'r_d_categoria' => $r_d_categoria,
+            'lancamento_categoria' => $lancamento_categoria,
             'data' => $data,
             'valor' => $valor,
             'descricao' => $descricao
@@ -152,6 +154,46 @@ class Dashboard_model extends CI_Model {
         $this->db->where('data >=', $data_inicial);
         $this->db->where('data <=', $data_final);
         $this->db->order_by("data", "desc");
+
+        return $this->db->get()->result();
+    }
+
+    public function table_despesas(){
+        $data = $this->dashboard_model->getDateDespesa();
+        if($data != "now"){
+            $data_inicial = $data->data_inicial;
+            $data_final = $data->data_final;
+        }else{
+            $data_inicial = "now";
+            $data_final = "now";
+        }
+
+        $this->db->from('lancamentos');
+        $this->db->where('lancamento_tipo', '2');
+        $this->db->where('data >=', $data_inicial);
+        $this->db->where('data <=', $data_final);
+        $this->db->order_by("data", "desc");
+        $this->db->limit(5,0);
+
+        return $this->db->get()->result();
+    }
+
+    public function table_receitas(){
+        $data = $this->dashboard_model->getDateReceita();
+        if($data != "now"){
+            $data_inicial = $data->data_inicial;
+            $data_final = $data->data_final;
+        }else{
+            $data_inicial = "now";
+            $data_final = "now";
+        }
+
+        $this->db->from('lancamentos');
+        $this->db->where('lancamento_tipo', '1');
+        $this->db->where('data >=', $data_inicial);
+        $this->db->where('data <=', $data_final);
+        $this->db->order_by("data", "desc");
+        $this->db->limit(5,0);
 
         return $this->db->get()->result();
     }

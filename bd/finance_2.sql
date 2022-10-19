@@ -187,6 +187,7 @@ CREATE TABLE IF NOT EXISTS `categoria_despesas` (
 --
 
 INSERT INTO `categoria_despesas` (`id`, `nome`) VALUES
+(0, 'Selecione'),
 (NULL, 'FIXO - Aluguel'),
 (NULL, 'FIXO - Água'),
 (NULL, 'FIXO - Luz'),
@@ -218,6 +219,7 @@ CREATE TABLE IF NOT EXISTS `categoria_receitas` (
 --
 
 INSERT INTO `categoria_receitas` (`id`, `nome`) VALUES
+(0, 'Selecione'),
 (NULL, 'Bolsa - Estágio'),
 (NULL, 'Bolsa - PAPFE'),
 (NULL, 'Bolsa - FAPESP/CNPQ'),
@@ -249,6 +251,7 @@ CREATE TABLE IF NOT EXISTS `categoria_lancamentos` (
 --
 
 INSERT INTO `categoria_lancamentos` (`id`, `nome`) VALUES
+(0, 'Selecione'),
 (NULL, 'Transporte - Uber'),
 (NULL, 'Transporte - Onibus'),
 (NULL, 'iFood'),

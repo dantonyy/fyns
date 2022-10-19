@@ -18,6 +18,8 @@ class Dashboard extends CI_Controller {
         $data['categorias_receitas'] = $this->dashboard_model->get_categoria_receitas();
         $data['ultimas_despesas'] = $this->dashboard_model->ultimas_despesas();
         $data['ultimas_receitas'] = $this->dashboard_model->ultimas_receitas();
+        $data['table_despesas'] = $this->dashboard_model->table_despesas();
+        $data['table_receitas'] = $this->dashboard_model->table_receitas();
 
         //Datas
         $data['data'] = $this->dashboard_model->getDate();
@@ -60,6 +62,7 @@ class Dashboard extends CI_Controller {
 
         $data['bancos'] = $this->dashboard_model->get_bancos();
         $data['lancamentos_tipo'] = $this->dashboard_model->get_lancamentosTipo();
+        $data['categoria_lancamentos'] = $this->dashboard_model->get_categoria_lancamentos();
         $data['categorias_despesas'] = $this->dashboard_model->get_categoria_despesas();
         $data['categorias_receitas'] = $this->dashboard_model->get_categoria_receitas();
         
@@ -70,29 +73,18 @@ class Dashboard extends CI_Controller {
         $this->load->view('includes/html_footer_full.php');
     }
 
-    public function lancar_despesa(){
+    public function lancar(){
 
-        $id_user =      $this->input->post('id_user');
-        $id_banco =     $this->input->post('id_banco');
-        $categoria_id = $this->input->post('categoria_id');
-        $data =         $this->input->post('data');
-        $valor =        $this->input->post('valor');
-        $descricao =    $this->input->post('descricao');
+        $id_user =          $this->input->post('id_user');
+        $id_banco =         $this->input->post('id_banco');
+        $lancamento_tipo =  $this->input->post('lancamento_tipo');
+        $r_d_categoria  =   $this->input->post('r_d_categoria');
+        $lancamento_categoria  =    $this->input->post('lancamento_categoria');
+        $data =             $this->input->post('data');
+        $valor =            $this->input->post('valor');
+        $descricao =        $this->input->post('descricao');
 
-        $this->dashboard_model->lancar_despesa($id_user,$id_banco,$categoria_id,$data,$valor,$descricao);
-        // $this->output->set_output($result);
-    }
-
-    public function lancar_receita(){
-
-        $id_user =      $this->input->post('id_user');
-        $id_banco =     $this->input->post('id_banco');
-        $categoria_id = $this->input->post('categoria_id');
-        $data =         $this->input->post('data');
-        $valor =        $this->input->post('valor');
-        $descricao =    $this->input->post('descricao');
-
-        $this->dashboard_model->lancar_receita($id_user,$id_banco,$categoria_id,$data,$valor,$descricao);
+        $this->dashboard_model->lancar($id_user, $id_banco, $lancamento_tipo, $r_d_categoria, $lancamento_categoria, $data, $valor, $descricao);
         // $this->output->set_output($result);
     }
 

@@ -73,12 +73,12 @@ $saldo = $sum_receita_total - $sum_desp_total;
                                       <i class="fas fa-pencil-alt"></i>
                                   </span>&nbspSalvar datas
                               </button>
-                              <button onclick="saveDate(1)" class="open-AddQuest btn btn-warning  btn-round">
+                              <button onclick="saveDate(2)" class="open-AddQuest btn btn-warning  btn-round">
                                   <span class="btn-label">
                                       <i class="fas fa-pencil-alt"></i>
                                   </span>&nbspSalvar Despesa
                               </button>
-                              <button onclick="saveDate(2)" class="open-AddQuest btn btn-warning  btn-round">
+                              <button onclick="saveDate(1)" class="open-AddQuest btn btn-warning  btn-round">
                                   <span class="btn-label">
                                       <i class="fas fa-pencil-alt"></i>
                                   </span>&nbspSalvar Receita
@@ -308,7 +308,7 @@ $saldo = $sum_receita_total - $sum_desp_total;
                         echo '</td>';
                       
                         echo '<td class="text-center">';
-                        echo 'Despesa';
+                        echo 'Receita';
                         echo '</td>';
 
                         echo '<td class="text-center">';
@@ -397,7 +397,7 @@ $saldo = $sum_receita_total - $sum_desp_total;
                     </thead>
                     <tbody>
                       <?php
-                      foreach ($ultimas_despesas as $lancamentos){
+                      foreach ($table_despesas as $lancamentos){
                         foreach ($lancamentos_tipo as $tipo) {
                           if ($lancamentos->lancamento_tipo == $tipo->id && $tipo->nome == "Despesa"){
                             echo '<tr>';
@@ -482,7 +482,7 @@ $saldo = $sum_receita_total - $sum_desp_total;
                     <tbody>
                       <?php
                       //var_dump($categoria_lancamentos);
-                      foreach ($ultimas_receitas as $lancamentos){
+                      foreach ($table_receitas as $lancamentos){
                         foreach ($lancamentos_tipo as $tipo) {
                           if ($lancamentos->lancamento_tipo == $tipo->id && $tipo->nome == "Receita"){
                             echo '<tr>';
