@@ -294,86 +294,87 @@
                 </div>
 
                 <br>
+                <div id="ocultar" style="display:none">
+                  <div class="col-lg-12 form-group fadeIn second" id="CategoriaDespesa">
+                    <label for="categorias" class="sr-only">CategoriaDespesa</label>
+                    <select id="categorias" name="categorias" class="form-control">
+                      <?php 
+                        foreach ($categorias_despesas as $categoria){
+                          echo '<option id="r_d_categoria" value="'.$categoria->id.'">'.$categoria->nome.'</option>';
+                        }
+                      ?>
+                    </select>
+                  </div>
 
-                <div class="col-lg-12 form-group fadeIn second" id="CategoriaDespesa">
-                  <label for="categorias" class="sr-only">CategoriaDespesa</label>
-                  <select id="categorias" name="categorias" class="form-control">
-                    <?php 
-                      foreach ($categorias_despesas as $categoria){
-                        echo '<option id="r_d_categoria" value="'.$categoria->id.'">'.$categoria->nome.'</option>';
-                      }
-                    ?>
-                  </select>
+                  <div class="col-lg-12 form-group fadeIn second" id="CategoriaReceita">
+                    <label for="categorias" class="sr-only">CategoriaReceita</label>
+                    <select id="categorias" name="categorias" class="form-control">
+                      <?php 
+                        foreach ($categorias_receitas as $categoria){
+                          echo '<option id="r_d_categoria" value="'.$categoria->id.'">'.$categoria->nome.'</option>';
+                        }
+                      ?>
+                    </select>
+                  </div>
+
+                  <br>
+
+                  <div class="col-lg-12 fadeIn second">
+                    <label for="bancos" class="sr-only">Bancos</label>
+                    <select id="bancos" name="bancos" class="form-control">
+                      <?php 
+                        foreach ($bancos as $banco){
+                          echo '<option id="banco" value="'.$banco->id.'">'.$banco->nome.'</option>';
+                        }
+                      ?>
+                    </select>
+                  </div>
+
+                  <br>
+
+                  <div class="col-lg-12 form-group fadeIn second" id="categoria_despesa">
+                    <label for="categorias" class="sr-only">categorias</label>
+                    <select id="categorias" name="categorias" class="form-control">
+                      <?php 
+                        foreach ($categoria_lancamentos as $categoria){
+                          echo '<option id="categoria_id" value="'.$categoria->id.'">'.$categoria->nome.'</option>';
+                        }
+                      ?>
+                    </select>
+                  </div>
+
+                  <br>
+
+                  <div class="col-lg-12 form-group fadeIn second">
+                    <label for="data" class="sr-only">Data</label>
+                    <input type="date" class="form-control" id="data" name="data" placeholder="data">
+                  </div>
+
+                  <br>
+
+                  <div class="col-lg-12 form-group fadeIn second">
+                    <label for="valor" class="sr-only">Valor</label>
+                    <input type='currency' value="0"  class="form-control" id="valor" name="valor" placeholder="Valor" />
+                  </div>
+
+                  <br>
+
+                  <div class="col-lg-12 form-group fadeIn second">
+                    <label for="descricao" class="sr-only">Descrição</label>
+                    <input type="text" class="form-control" id="descricao" name="descricao" placeholder="Descrição">
+                  </div>
+
+                  <!-- <input type="text" id="login" class="fadeIn second" name="login" placeholder="login">
+                  <input type="text" id="password" class="fadeIn third" name="login" placeholder="password"> -->
+
+                  <input type="submit" class="fadeIn fourth lancar" id="lancar" name="lancar" onclick="lancar()" value="Efetuar Lançamento">
                 </div>
-
-                <div class="col-lg-12 form-group fadeIn second" id="CategoriaReceita">
-                  <label for="categorias" class="sr-only">CategoriaReceita</label>
-                  <select id="categorias" name="categorias" class="form-control">
-                    <?php 
-                      foreach ($categorias_receitas as $categoria){
-                        echo '<option id="r_d_categoria" value="'.$categoria->id.'">'.$categoria->nome.'</option>';
-                      }
-                    ?>
-                  </select>
-                </div>
-
-                <br>
-
-                <div class="col-lg-12 fadeIn second">
-                  <label for="bancos" class="sr-only">Bancos</label>
-                  <select id="bancos" name="bancos" class="form-control">
-                    <?php 
-                      foreach ($bancos as $banco){
-                        echo '<option id="banco" value="'.$banco->id.'">'.$banco->nome.'</option>';
-                      }
-                    ?>
-                  </select>
-                </div>
-
-                <br>
-
-                <div class="col-lg-12 form-group fadeIn second">
-                  <label for="categorias" class="sr-only">categorias</label>
-                  <select id="categorias" name="categorias" class="form-control">
-                    <?php 
-                      foreach ($categoria_lancamentos as $categoria){
-                        echo '<option id="categoria_id" value="'.$categoria->id.'">'.$categoria->nome.'</option>';
-                      }
-                    ?>
-                  </select>
-                </div>
-
-                <br>
-
-                <div class="col-lg-12 form-group fadeIn second">
-                  <label for="data" class="sr-only">Data</label>
-                  <input type="date" class="form-control" id="data" name="data" placeholder="data">
-                </div>
-
-                <br>
-
-                <div class="col-lg-12 form-group fadeIn second">
-                  <label for="valor" class="sr-only">Valor</label>
-                  <input type='currency' value="0"  class="form-control" id="valor" name="valor" placeholder="Valor" />
-                </div>
-
-                <br>
-
-                <div class="col-lg-12 form-group fadeIn second">
-                  <label for="descricao" class="sr-only">Descrição</label>
-                  <input type="text" class="form-control" id="descricao" name="descricao" placeholder="Descrição">
-                </div>
-
-                <!-- <input type="text" id="login" class="fadeIn second" name="login" placeholder="login">
-                <input type="text" id="password" class="fadeIn third" name="login" placeholder="password"> -->
-
-                <input type="submit" class="fadeIn fourth lancar" id="lancar" name="lancar" onclick="lancar()" value="Efetuar Lançamento">
               <!-- </form> -->
               </div>
 
               <!-- Remind Passowrd -->
               <div id="formFooter">
-                <a class="underlineHover" href="#">Forgot Password?</a>
+                <a class="underlineHover" href="#">Hi?</a>
               </div>
 
             </div>
@@ -405,8 +406,13 @@
         var tipo_id = lanc_campo[i].value;
     }
 
+    if (tipo_id != 0) {
+      document.getElementById('ocultar').style.display = 'block';
+    }
+
     if (tipo_id == 1) {
       document.getElementById('CategoriaDespesa').style.display = 'none';
+      document.getElementById('categoria_despesa').style.display = 'none';
       var r_d_categoria = document.getElementById('r_d_categoria').value;
     }
     if (tipo_id == 2) {

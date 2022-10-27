@@ -75,14 +75,14 @@ class Dashboard extends CI_Controller {
 
     public function lancar(){
 
-        $id_user =          $this->input->post('id_user');
-        $id_banco =         $this->input->post('id_banco');
-        $lancamento_tipo =  $this->input->post('lancamento_tipo');
-        $r_d_categoria  =   $this->input->post('r_d_categoria');
+        $id_user =                  $this->input->post('id_user');
+        $id_banco =                 $this->input->post('id_banco');
+        $lancamento_tipo =          $this->input->post('lancamento_tipo');
+        $r_d_categoria  =           $this->input->post('r_d_categoria');
         $lancamento_categoria  =    $this->input->post('lancamento_categoria');
-        $data =             $this->input->post('data');
-        $valor =            $this->input->post('valor');
-        $descricao =        $this->input->post('descricao');
+        $data =                     $this->input->post('data');
+        $valor =                    $this->input->post('valor');
+        $descricao =                $this->input->post('descricao');
 
         $this->dashboard_model->lancar($id_user, $id_banco, $lancamento_tipo, $r_d_categoria, $lancamento_categoria, $data, $valor, $descricao);
         // $this->output->set_output($result);

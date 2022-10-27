@@ -603,6 +603,13 @@
           </li>
 
           <li>
+            <a href="<?php echo base_url('dashboard/index/')?>">
+              <i class="fa fa-folder"></i>
+              <span>Dashboard</span>
+            </a>
+          </li>
+
+          <li>
             <a href="<?php echo base_url('dashboard/lancamentos/')?>">
               <i class="fa fa-folder"></i>
               <span>Lançamentos</span>
