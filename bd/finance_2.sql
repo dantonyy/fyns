@@ -68,10 +68,10 @@ CREATE TABLE IF NOT EXISTS `bancos` (
 --
 
 INSERT INTO `bancos` (`id`, `nome`) VALUES
-(NULL, 'Banco do Brasil'),
-(NULL, 'Inter'),
-(NULL, 'NuBank'),
-(NULL, 'Digio');
+(1, 'Banco do Brasil'),
+(5, 'Digio'),
+(6, 'Inter'),
+(7, 'NuBank');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
@@ -188,13 +188,13 @@ CREATE TABLE IF NOT EXISTS `categoria_despesas` (
 
 INSERT INTO `categoria_despesas` (`id`, `nome`) VALUES
 (0, 'Selecione'),
-(NULL, 'FIXO - Aluguel'),
-(NULL, 'FIXO - Água'),
-(NULL, 'FIXO - Luz'),
-(NULL, 'FIXO - Internet'),
-(NULL, 'Fatura - Digio'),
-(NULL, 'Fatura - Inter'),
-(NULL, 'Fatura - NuBank');
+(1, 'FIXO - Aluguel'),
+(2, 'FIXO - Água'),
+(3, 'FIXO - Luz'),
+(4, 'FIXO - Internet'),
+(5, 'Fatura - Digio'),
+(6, 'Fatura - Inter'),
+(7, 'Fatura - NuBank');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
@@ -220,13 +220,13 @@ CREATE TABLE IF NOT EXISTS `categoria_receitas` (
 
 INSERT INTO `categoria_receitas` (`id`, `nome`) VALUES
 (0, 'Selecione'),
-(NULL, 'Bolsa - Estágio'),
-(NULL, 'Bolsa - PAPFE'),
-(NULL, 'Bolsa - FAPESP/CNPQ'),
-(NULL, 'Auxílio - Painho'),
-(NULL, 'Auxílio - Mainha'),
-(NULL, 'PIX'),
-(NULL, 'Outros');
+(1, 'Bolsa - Estágio'),
+(2, 'Bolsa - PAPFE'),
+(3, 'Bolsa - FAPESP/CNPQ'),
+(4, 'Auxílio - Painho'),
+(5, 'Auxílio - Mainha'),
+(6, 'PIX'),
+(7, 'Outros');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
@@ -252,6 +252,12 @@ CREATE TABLE IF NOT EXISTS `categoria_lancamentos` (
 
 INSERT INTO `categoria_lancamentos` (`id`, `nome`) VALUES
 (0, 'Selecione'),
+(1, 'FIXO - Aluguel'),
+(2, 'Conta - Água'),
+(3, 'Conta - Luz'),
+(4, 'Conta - Internet'),
+(NULL, 'Assinaturas'),
+(-1, '----------'),
 (NULL, 'Transporte - Uber'),
 (NULL, 'Transporte - Onibus'),
 (NULL, 'iFood'),

@@ -1,465 +1,377 @@
-<footer class="text-center">
-        <div class="mb-2">
-          <small>
-            © 2022 made with <i class="fa fa-heart" style="color:red"></i> by - <a target="_blank" rel="noopener noreferrer" href="https://azouaoui.netlify.com">
-              Mohamed Azouaoui
-            </a>
-          </small>
-        </div>
-        <div>
-          <a href="https://github.com/azouaoui-med" target="_blank">
-            <img alt="GitHub followers" src="https://img.shields.io/github/followers/azouaoui-med?label=github&style=social" />
-          </a>
-          <a href="https://twitter.com/azouaoui_med" target="_blank">
-            <img alt="Twitter Follow" src="https://img.shields.io/twitter/follow/azouaoui_med?label=twitter&style=social" />
-          </a>
+<footer class="footer py-4  ">
+        <div class="container-fluid">
+          <div class="row align-items-center justify-content-lg-between">
+            <div class="col-lg-6 mb-lg-0 mb-4">
+              <div class="copyright text-center text-sm text-muted text-lg-start">
+                © <script>
+                  document.write(new Date().getFullYear())
+                </script>,
+                made with <i class="fa fa-heart"></i> by
+                <a href="https://www.creative-tim.com" class="font-weight-bold" target="_blank">Creative Tim</a>
+                for a better web.
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <ul class="nav nav-footer justify-content-center justify-content-lg-end">
+                <li class="nav-item">
+                  <a href="https://www.creative-tim.com" class="nav-link text-muted" target="_blank">Creative Tim</a>
+                </li>
+                <li class="nav-item">
+                  <a href="https://www.creative-tim.com/presentation" class="nav-link text-muted" target="_blank">About Us</a>
+                </li>
+                <li class="nav-item">
+                  <a href="https://www.creative-tim.com/blog" class="nav-link text-muted" target="_blank">Blog</a>
+                </li>
+                <li class="nav-item">
+                  <a href="https://www.creative-tim.com/license" class="nav-link pe-0 text-muted" target="_blank">License</a>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
       </footer>
     </div>
   </main>
-  <!-- page-content" -->
-</div>
-<!-- page-wrapper -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
-    
-</body>
-
-</html>
-      <!-- End Navbar -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.esm.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.esm.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.mjs"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/helpers.esm.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/helpers.esm.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/helpers.mjs"></script>
+  <div class="fixed-plugin">
+    <a class="fixed-plugin-button text-dark position-fixed px-3 py-2">
+      <i class="material-icons py-2">settings</i>
+    </a>
+    <div class="card shadow-lg">
+      <div class="card-header pb-0 pt-3">
+        <div class="float-start">
+          <h5 class="mt-3 mb-0">Material UI Configurator</h5>
+          <p>See our dashboard options.</p>
+        </div>
+        <div class="float-end mt-4">
+          <button class="btn btn-link text-dark p-0 fixed-plugin-close-button">
+            <i class="material-icons">clear</i>
+          </button>
+        </div>
+        <!-- End Toggle Button -->
+      </div>
+      <hr class="horizontal dark my-1">
+      <div class="card-body pt-sm-3 pt-0">
+        <!-- Sidebar Backgrounds -->
+        <div>
+          <h6 class="mb-0">Sidebar Colors</h6>
+        </div>
+        <a href="javascript:void(0)" class="switch-trigger background-color">
+          <div class="badge-colors my-2 text-start">
+            <span class="badge filter bg-gradient-primary active" data-color="primary" onclick="sidebarColor(this)"></span>
+            <span class="badge filter bg-gradient-dark" data-color="dark" onclick="sidebarColor(this)"></span>
+            <span class="badge filter bg-gradient-info" data-color="info" onclick="sidebarColor(this)"></span>
+            <span class="badge filter bg-gradient-success" data-color="success" onclick="sidebarColor(this)"></span>
+            <span class="badge filter bg-gradient-warning" data-color="warning" onclick="sidebarColor(this)"></span>
+            <span class="badge filter bg-gradient-danger" data-color="danger" onclick="sidebarColor(this)"></span>
+          </div>
+        </a>
+        <!-- Sidenav Type -->
+        <div class="mt-3">
+          <h6 class="mb-0">Sidenav Type</h6>
+          <p class="text-sm">Choose between 2 different sidenav types.</p>
+        </div>
+        <div class="d-flex">
+          <button class="btn bg-gradient-dark px-3 mb-2 active" data-class="bg-gradient-dark" onclick="sidebarType(this)">Dark</button>
+          <button class="btn bg-gradient-dark px-3 mb-2 ms-2" data-class="bg-transparent" onclick="sidebarType(this)">Transparent</button>
+          <button class="btn bg-gradient-dark px-3 mb-2 ms-2" data-class="bg-white" onclick="sidebarType(this)">White</button>
+        </div>
+        <p class="text-sm d-xl-none d-block mt-2">You can change the sidenav type just on desktop view.</p>
+        <!-- Navbar Fixed -->
+        <div class="mt-3 d-flex">
+          <h6 class="mb-0">Navbar Fixed</h6>
+          <div class="form-check form-switch ps-0 ms-auto my-auto">
+            <input class="form-check-input mt-1 ms-auto" type="checkbox" id="navbarFixed" onclick="navbarFixed(this)">
+          </div>
+        </div>
+        <hr class="horizontal dark my-3">
+        <div class="mt-2 d-flex">
+          <h6 class="mb-0">Light / Dark</h6>
+          <div class="form-check form-switch ps-0 ms-auto my-auto">
+            <input class="form-check-input mt-1 ms-auto" type="checkbox" id="dark-version" onclick="darkMode(this)">
+          </div>
+        </div>
+        <hr class="horizontal dark my-sm-4">
+        <a class="btn bg-gradient-info w-100" href="https://www.creative-tim.com/product/material-dashboard-pro">Free Download</a>
+        <a class="btn btn-outline-dark w-100" href="https://www.creative-tim.com/learning-lab/bootstrap/overview/material-dashboard">View documentation</a>
+        <div class="w-100 text-center">
+          <a class="github-button" href="https://github.com/creativetimofficial/material-dashboard" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star creativetimofficial/material-dashboard on GitHub">Star</a>
+          <h6 class="mt-3">Thank you for sharing!</h6>
+          <a href="https://twitter.com/intent/tweet?text=Check%20Material%20UI%20Dashboard%20made%20by%20%40CreativeTim%20%23webdesign%20%23dashboard%20%23bootstrap5&amp;url=https%3A%2F%2Fwww.creative-tim.com%2Fproduct%2Fsoft-ui-dashboard" class="btn btn-dark mb-0 me-2" target="_blank">
+            <i class="fab fa-twitter me-1" aria-hidden="true"></i> Tweet
+          </a>
+          <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.creative-tim.com/product/material-dashboard" class="btn btn-dark mb-0 me-2" target="_blank">
+            <i class="fab fa-facebook-square me-1" aria-hidden="true"></i> Share
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--   Core JS Files   -->
+  <script src=<?php echo base_url('application/views/dashboard/assets/js/core/popper.min.js') ?>></script>
+  <script src=<?php echo base_url('application/views/dashboard/assets/js/core/bootstrap.min.js') ?>></script>
+  <script src=<?php echo base_url('application/views/dashboard/assets/js/plugins/perfect-scrollbar.min.js') ?>></script>
+  <script src=<?php echo base_url('application/views/dashboard/assets/js/plugins/smooth-scrollbar.min.js') ?>></script>
+  <script src=<?php echo base_url('application/views/dashboard/assets/js/plugins/chartjs.min.js') ?>></script>
   <script>
+    var ctx = document.getElementById("chart-bars").getContext("2d");
 
-    jQuery(function ($) {
-
-    $(".sidebar-dropdown > a").click(function() {
-    $(".sidebar-submenu").slideUp(200);
-    if (
-    $(this)
-      .parent()
-      .hasClass("active")
-    ) {
-    $(".sidebar-dropdown").removeClass("active");
-    $(this)
-      .parent()
-      .removeClass("active");
-    } else {
-    $(".sidebar-dropdown").removeClass("active");
-    $(this)
-      .next(".sidebar-submenu")
-      .slideDown(200);
-    $(this)
-      .parent()
-      .addClass("active");
-    }
-    });
-
-    $("#close-sidebar").click(function() {
-    $(".page-wrapper").removeClass("toggled");
-    });
-    $("#show-sidebar").click(function() {
-    $(".page-wrapper").addClass("toggled");
-    });
-    });
-
-    $(document).ready(function() {
-      $().ready(function() {
-        $sidebar = $('.sidebar');
-        $navbar = $('.navbar');
-        $main_panel = $('.main-panel');
-
-        $full_page = $('.full-page');
-
-        $sidebar_responsive = $('body > .navbar-collapse');
-        sidebar_mini_active = true;
-        white_color = false;
-
-        window_width = $(window).width();
-
-        fixed_plugin_open = $('.sidebar .sidebar-wrapper .nav li.active a p').html();
-
-
-
-        $('.fixed-plugin a').click(function(event) {
-          if ($(this).hasClass('switch-trigger')) {
-            if (event.stopPropagation) {
-              event.stopPropagation();
-            } else if (window.event) {
-              window.event.cancelBubble = true;
-            }
+    new Chart(ctx, {
+      type: "bar",
+      data: {
+        labels: ["M", "T", "W", "T", "F", "S", "S"],
+        datasets: [{
+          label: "Sales",
+          tension: 0.4,
+          borderWidth: 0,
+          borderRadius: 4,
+          borderSkipped: false,
+          backgroundColor: "rgba(255, 255, 255, .8)",
+          data: [50, 20, 10, 22, 50, 10, 40],
+          maxBarThickness: 6
+        }, ],
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: {
+            display: false,
           }
-        });
-
-        $('.fixed-plugin .background-color span').click(function() {
-          $(this).siblings().removeClass('active');
-          $(this).addClass('active');
-
-          var new_color = $(this).data('color');
-
-          if ($sidebar.length != 0) {
-            $sidebar.attr('data', new_color);
-          }
-
-          if ($main_panel.length != 0) {
-            $main_panel.attr('data', new_color);
-          }
-
-          if ($full_page.length != 0) {
-            $full_page.attr('filter-color', new_color);
-          }
-
-          if ($sidebar_responsive.length != 0) {
-            $sidebar_responsive.attr('data', new_color);
-          }
-        });
-
-        $('.switch-sidebar-mini input').on("switchChange.bootstrapSwitch", function() {
-          var $btn = $(this);
-
-          if (sidebar_mini_active == true) {
-            $('body').removeClass('sidebar-mini');
-            sidebar_mini_active = false;
-            blackDashboard.showSidebarMessage('Sidebar mini deactivated...');
-          } else {
-            $('body').addClass('sidebar-mini');
-            sidebar_mini_active = true;
-            blackDashboard.showSidebarMessage('Sidebar mini activated...');
-          }
-
-          // we simulate the window Resize so the charts will get updated in realtime.
-          var simulateWindowResize = setInterval(function() {
-            window.dispatchEvent(new Event('resize'));
-          }, 180);
-
-          // we stop the simulation of Window Resize after the animations are completed
-          setTimeout(function() {
-            clearInterval(simulateWindowResize);
-          }, 1000);
-        });
-
-        $('.switch-change-color input').on("switchChange.bootstrapSwitch", function() {
-          var $btn = $(this);
-
-          if (white_color == true) {
-
-            $('body').addClass('change-background');
-            setTimeout(function() {
-              $('body').removeClass('change-background');
-              $('body').removeClass('white-content');
-            }, 900);
-            white_color = false;
-          } else {
-
-            $('body').addClass('change-background');
-            setTimeout(function() {
-              $('body').removeClass('change-background');
-              $('body').addClass('white-content');
-            }, 900);
-
-            white_color = true;
-          }
-
-
-        });
-
-        $('.light-badge').click(function() {
-          $('body').addClass('white-content');
-        });
-
-        $('.dark-badge').click(function() {
-          $('body').removeClass('white-content');
-        });
-      });
-    });
-  </script>
-  <script>
-    $(document).ready(function() {
-      // Javascript method's body can be found in assets/js/demos.js
-      demo.initDashboardPageCharts();
-
-    });
-  </script>
-  <script src="https://cdn.trackjs.com/agent/v3/latest/t.js"></script>
-  <script>
-    window.TrackJS &&
-      TrackJS.install({
-        token: "ee6fab19c5a04ac1a32a645abde4613a",
-        application: "black-dashboard-free"
-      });
-  </script>
-  
-<!--   Core JS Files   -->
-	<script src=<?php echo base_url('/application/views/dashboard/assets/js/core/jquery.min.js') ?>></script>
-	<script src=<?php echo base_url('/application/views/dashboard/assets/js/core/popper.min.js') ?>></script>
-	<script src=<?php echo base_url('/application/views/dashboard/assets/js/core/bootstrap.min.js') ?>></script>
-	<script src=<?php echo base_url('/application/views/dashboard/assets/js/plugins/perfect-scrollbar.jquery.min.js') ?>></script>
-	<!--  Google Maps Plugin    -->
-	<!-- Place this tag in your head or just before your close body tag. -->
-	<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
-	<!-- Chart JS -->
-	<script src=<?php echo base_url('/application/views/dashboard/assets/js/plugins/chartjs.min.js') ?>></script>
-	<!--  Notifications Plugin    -->
-	<script src=<?php echo base_url('/application/views/dashboard/assets/js/plugins/bootstrap-notify.js') ?>></script>
-	<!-- Control Center for Black Dashboard: parallax effects, scripts for the example pages etc -->
-	<script src=<?php echo base_url('/application/views/dashboard/assets/js/black-dashboard.min.js?v=1.0.0') ?>></script><!-- Black Dashboard DEMO methods, don't include it in your project! -->
-	<script src=<?php echo base_url('/application/views/dashboard/assets/demo/demo.js') ?>></script>
-  <script>
-    function changeActiveTab(active_tab, active_tab_content){
-      if(active_tab_content == "tabs-2"){
-        showQuest();
-      }
-      if(active_tab_content == "tabs-3"){
-        showQuestPar();
-      }
-
-      if(active_tab_content == "tabs-4"){
-        showStatistics(document.getElementById('id_oferecimentos').value, document.getElementById('estatisticas'), 'a');
-      }
-
-      localStorage.setItem('last_tab', active_tab);
-      localStorage.setItem('last_tab_content', active_tab_content);
-    }
-
-    $(document).ready(function() {
-      $().ready(function() {
-        $sidebar = $('.sidebar');
-        $navbar = $('.navbar');
-        $main_panel = $('.main-panel');
-
-        $full_page = $('.full-page');
-
-        $sidebar_responsive = $('body > .navbar-collapse');
-        sidebar_mini_active = true;
-        white_color = false;
-
-        window_width = $(window).width();
-
-        fixed_plugin_open = $('.sidebar .sidebar-wrapper .nav li.active a p').html();
-
-
-
-        $('.fixed-plugin a').click(function(event) {
-          if ($(this).hasClass('switch-trigger')) {
-            if (event.stopPropagation) {
-              event.stopPropagation();
-            } else if (window.event) {
-              window.event.cancelBubble = true;
-            }
-          }
-        });
-
-        $('.fixed-plugin .background-color span').click(function() {
-          $(this).siblings().removeClass('active');
-          $(this).addClass('active');
-
-          var new_color = $(this).data('color');
-
-          if ($sidebar.length != 0) {
-            $sidebar.attr('data', new_color);
-          }
-
-          if ($main_panel.length != 0) {
-            $main_panel.attr('data', new_color);
-          }
-
-          if ($full_page.length != 0) {
-            $full_page.attr('filter-color', new_color);
-          }
-
-          if ($sidebar_responsive.length != 0) {
-            $sidebar_responsive.attr('data', new_color);
-          }
-        });
-
-        $('.switch-sidebar-mini input').on("switchChange.bootstrapSwitch", function() {
-          var $btn = $(this);
-
-          if (sidebar_mini_active == true) {
-            $('body').removeClass('sidebar-mini');
-            sidebar_mini_active = false;
-            blackDashboard.showSidebarMessage('Sidebar mini deactivated...');
-          } else {
-            $('body').addClass('sidebar-mini');
-            sidebar_mini_active = true;
-            blackDashboard.showSidebarMessage('Sidebar mini activated...');
-          }
-
-          // we simulate the window Resize so the charts will get updated in realtime.
-          var simulateWindowResize = setInterval(function() {
-            window.dispatchEvent(new Event('resize'));
-          }, 180);
-
-          // we stop the simulation of Window Resize after the animations are completed
-          setTimeout(function() {
-            clearInterval(simulateWindowResize);
-          }, 1000);
-        });
-
-        $('.switch-change-color input').on("switchChange.bootstrapSwitch", function() {
-          var $btn = $(this);
-
-          if (white_color == true) {
-
-            $('body').addClass('change-background');
-            setTimeout(function() {
-              $('body').removeClass('change-background');
-              $('body').removeClass('white-content');
-            }, 900);
-            white_color = false;
-          } else {
-
-            $('body').addClass('change-background');
-            setTimeout(function() {
-              $('body').removeClass('change-background');
-              $('body').addClass('white-content');
-            }, 900);
-
-            white_color = true;
-          }
-
-
-        });
-
-        $('.light-badge').click(function() {
-          $('body').addClass('white-content');
-        });
-
-        $('.dark-badge').click(function() {
-          $('body').removeClass('white-content');
-        });
-      });
-    });
-
-
-    function criarGraficoBarras(id_pergunta, pergunta, dominios, verde, amarelo, vermelho){
-        var divColuna = document.createElement('DIV');
-        divColuna.setAttribute("class", "col-md-12");
-        var divCard = document.createElement('DIV');
-        divCard.setAttribute("class", "card");
-        var divCardHeader = document.createElement('DIV');
-        divCardHeader.setAttribute("class", "card-header");
-        var divCardTitle = document.createElement('DIV');
-        divCardTitle.setAttribute("class", "card-title");
-        divCardTitle.innerHTML = pergunta;
-        var divCardBody = document.createElement('DIV');
-        divCardBody.setAttribute("class", "card-body");
-        var divChartContainer = document.createElement('DIV');
-        divChartContainer.setAttribute("class", "chart-container");
-        var divCSM = document.createElement('DIV');
-        divCSM.setAttribute("class", "chartjs-size-monitor");
-        divCSM.setAttribute("style", "position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;");
-        var divCSME = document.createElement('DIV');
-        divCSME.setAttribute("class", "chartjs-size-monitor-expand");
-        divCSME.setAttribute("style", "position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;");
-        var divCSMS = document.createElement('DIV');
-        divCSMS.setAttribute("class", "chartjs-size-monitor-shrink");
-        divCSMS.setAttribute("style", "position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;");    
-        var divStyle1 = document.createElement('DIV');
-        divStyle1.setAttribute("style", "position:absolute;width:1000000px;height:1000000px;left:0;top:0;");
-        var divStyle2 = document.createElement('DIV');
-        divStyle2.setAttribute("style", "position:absolute;width:200%;height:200%;left:0; top:0;");
-        var canvas = document.createElement('canvas');
-        canvas.setAttribute("style", "width: 380px; height: 300px; display: block;");
-        canvas.setAttribute("width", "760");
-        canvas.setAttribute("height", "600");
-        canvas.setAttribute("class", "chartjs-render-monitor");
-        canvas.setAttribute("id", "chart_" + id_pergunta);
-
-        //Unir as divs
-        divCSMS.appendChild(divStyle2);
-        divCSME.appendChild(divStyle1);
-        divCSM.appendChild(divCSME);
-        divCSM.appendChild(divCSMS);
-        divChartContainer.appendChild(divCSM);
-        divChartContainer.appendChild(canvas);
-        divCardBody.appendChild(divChartContainer);
-        divCardHeader.appendChild(divCardTitle);
-        divCard.appendChild(divCardHeader);
-        divCard.appendChild(divCardBody);
-        divColuna.appendChild(divCard);
-
-        var multipleBarChart = canvas.getContext('2d');
-        var color = Chart.helpers.color;
-
-        var myMultipleBarChart = new Chart(multipleBarChart, {
-            type: 'bar',
-            data: {
-                labels: dominios,
-                datasets : [{
-                    label: "Verde",
-                    backgroundColor: '#46D24A',
-                    borderColor: '#46D24A',
-                    data: verde,
-                },{
-                    label: "Amarelo",
-                    backgroundColor: '#FFB559',
-                    borderColor: '#FFB559',
-                    data: amarelo,
-                }, {
-                    label: "Vermelho",
-                    backgroundColor: '#F36A71',
-                    borderColor: '#F36A71',
-                    data: vermelho,
-                }],
+        },
+        interaction: {
+          intersect: false,
+          mode: 'index',
+        },
+        scales: {
+          y: {
+            grid: {
+              drawBorder: false,
+              display: true,
+              drawOnChartArea: true,
+              drawTicks: false,
+              borderDash: [5, 5],
+              color: 'rgba(255, 255, 255, .2)'
             },
-            options: {
-                responsive: true, 
-                maintainAspectRatio: false,
-                legend: {
-                    position : 'bottom'
-                },
-                title: {
-                    display: true,
-                    text: pergunta
-                },
-                tooltips: {
-                    mode: 'index',
-                    intersect: false
-                },
-                responsive: true,
-                scales: {
-                    xAxes: [{
-                        stacked: true,
-                        
-                    }],
-                    yAxes: [{
-                        stacked: true, 
-                        ticks: {
-                            stepSize: 1
-                        }
-                                       
-                    }]
-                },
-                parsing: false
+            ticks: {
+              suggestedMin: 0,
+              suggestedMax: 500,
+              beginAtZero: true,
+              padding: 10,
+              font: {
+                size: 14,
+                weight: 300,
+                family: "Roboto",
+                style: 'normal',
+                lineHeight: 2
+              },
+              color: "#fff"
+            },
+          },
+          x: {
+            grid: {
+              drawBorder: false,
+              display: true,
+              drawOnChartArea: true,
+              drawTicks: false,
+              borderDash: [5, 5],
+              color: 'rgba(255, 255, 255, .2)'
+            },
+            ticks: {
+              display: true,
+              color: '#f8f9fa',
+              padding: 10,
+              font: {
+                size: 14,
+                weight: 300,
+                family: "Roboto",
+                style: 'normal',
+                lineHeight: 2
+              },
             }
-        });
-        return divColuna;
-    }
-  </script>
-  <script>
-    $(document).ready(function() {
-      // Javascript method's body can be found in assets/js/demos.js
-      demo.initDashboardPageCharts();
+          },
+        },
+      },
+    });
 
+
+    var ctx2 = document.getElementById("chart-line").getContext("2d");
+
+    new Chart(ctx2, {
+      type: "line",
+      data: {
+        labels: ["Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+        datasets: [{
+          label: "Mobile apps",
+          tension: 0,
+          borderWidth: 0,
+          pointRadius: 5,
+          pointBackgroundColor: "rgba(255, 255, 255, .8)",
+          pointBorderColor: "transparent",
+          borderColor: "rgba(255, 255, 255, .8)",
+          borderColor: "rgba(255, 255, 255, .8)",
+          borderWidth: 4,
+          backgroundColor: "transparent",
+          fill: true,
+          data: [50, 40, 300, 320, 500, 350, 200, 230, 500],
+          maxBarThickness: 6
+
+        }],
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: {
+            display: false,
+          }
+        },
+        interaction: {
+          intersect: false,
+          mode: 'index',
+        },
+        scales: {
+          y: {
+            grid: {
+              drawBorder: false,
+              display: true,
+              drawOnChartArea: true,
+              drawTicks: false,
+              borderDash: [5, 5],
+              color: 'rgba(255, 255, 255, .2)'
+            },
+            ticks: {
+              display: true,
+              color: '#f8f9fa',
+              padding: 10,
+              font: {
+                size: 14,
+                weight: 300,
+                family: "Roboto",
+                style: 'normal',
+                lineHeight: 2
+              },
+            }
+          },
+          x: {
+            grid: {
+              drawBorder: false,
+              display: false,
+              drawOnChartArea: false,
+              drawTicks: false,
+              borderDash: [5, 5]
+            },
+            ticks: {
+              display: true,
+              color: '#f8f9fa',
+              padding: 10,
+              font: {
+                size: 14,
+                weight: 300,
+                family: "Roboto",
+                style: 'normal',
+                lineHeight: 2
+              },
+            }
+          },
+        },
+      },
+    });
+
+    var ctx3 = document.getElementById("chart-line-tasks").getContext("2d");
+
+    new Chart(ctx3, {
+      type: "line",
+      data: {
+        labels: ["Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+        datasets: [{
+          label: "Mobile apps",
+          tension: 0,
+          borderWidth: 0,
+          pointRadius: 5,
+          pointBackgroundColor: "rgba(255, 255, 255, .8)",
+          pointBorderColor: "transparent",
+          borderColor: "rgba(255, 255, 255, .8)",
+          borderWidth: 4,
+          backgroundColor: "transparent",
+          fill: true,
+          data: [50, 40, 300, 220, 500, 250, 400, 230, 500],
+          maxBarThickness: 6
+
+        }],
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: {
+            display: false,
+          }
+        },
+        interaction: {
+          intersect: false,
+          mode: 'index',
+        },
+        scales: {
+          y: {
+            grid: {
+              drawBorder: false,
+              display: true,
+              drawOnChartArea: true,
+              drawTicks: false,
+              borderDash: [5, 5],
+              color: 'rgba(255, 255, 255, .2)'
+            },
+            ticks: {
+              display: true,
+              padding: 10,
+              color: '#f8f9fa',
+              font: {
+                size: 14,
+                weight: 300,
+                family: "Roboto",
+                style: 'normal',
+                lineHeight: 2
+              },
+            }
+          },
+          x: {
+            grid: {
+              drawBorder: false,
+              display: false,
+              drawOnChartArea: false,
+              drawTicks: false,
+              borderDash: [5, 5]
+            },
+            ticks: {
+              display: true,
+              color: '#f8f9fa',
+              padding: 10,
+              font: {
+                size: 14,
+                weight: 300,
+                family: "Roboto",
+                style: 'normal',
+                lineHeight: 2
+              },
+            }
+          },
+        },
+      },
     });
   </script>
-  <script src="https://cdn.trackjs.com/agent/v3/latest/t.js"></script>
   <script>
-    window.TrackJS &&
-      TrackJS.install({
-        token: "ee6fab19c5a04ac1a32a645abde4613a",
-        application: "black-dashboard-free"
-      });
+    var win = navigator.platform.indexOf('Win') > -1;
+    if (win && document.querySelector('#sidenav-scrollbar')) {
+      var options = {
+        damping: '0.5'
+      }
+      Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
+    }
   </script>
+  <!-- Github buttons -->
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+  <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
+  <script src=<?php echo base_url('application/views/dashboard/assets/js/material-dashboard.min.js?v=3.0.4')?>></script>
 </body>
+
 </html>

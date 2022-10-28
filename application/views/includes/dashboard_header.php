@@ -18,9 +18,19 @@
     <title>
       FYNS | Finance System
     </title>
-
-    <!-- Fonts and icons -->
-    <script src=<?php echo base_url('/assets/js/plugin/webfont/webfont.min.js') ?>></script>
+  <!--     Fonts and icons     -->
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700" />
+  <!-- Nucleo Icons -->
+  <link href=<?php echo base_url('application/views/dashboard/assets/css/nucleo-icons.css" rel="stylesheet') ?> />
+  <link href=<?php echo base_url('application/views/dashboard/assets/css/nucleo-svg.css" rel="stylesheet') ?> />
+  <!-- Font Awesome Icons -->
+  <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+  <!-- Material Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+  <!-- CSS Files -->
+  <link id="pagestyle" href=<?php echo base_url('application/views/dashboard/assets/css/material-dashboard.css?v=3.0.4') ?> rel="stylesheet" />
+      <!-- Fonts and icons -->
+      <script src=<?php echo base_url('/assets/js/plugin/webfont/webfont.min.js') ?>></script>
     <script>
       WebFont.load({
         google: {"families":["Lato:300,400,700,900"]},
@@ -40,633 +50,188 @@
     <script type="text/javascript" src=<?php echo base_url('/assets/jsCalendar/jsCalendar.js')?>></script>
     <script type="text/javascript" src=<?php echo base_url('/assets/jsCalendar/jsCalendar.lang.pt.js')?>></script>
     <script type="text/javascript" src=<?php echo base_url('/assets/jsCalendar/jsCalendar.datepicker.js')?>></script>
-
-    <style>
-          @keyframes swing {
-          0% {
-            transform: rotate(0deg);
-          }
-          10% {
-            transform: rotate(10deg);
-          }
-          30% {
-            transform: rotate(0deg);
-          }
-          40% {
-            transform: rotate(-10deg);
-          }
-          50% {
-            transform: rotate(0deg);
-          }
-          60% {
-            transform: rotate(5deg);
-          }
-          70% {
-            transform: rotate(0deg);
-          }
-          80% {
-            transform: rotate(-5deg);
-          }
-          100% {
-            transform: rotate(0deg);
-          }
-        }
-
-        @keyframes sonar {
-          0% {
-            transform: scale(0.9);
-            opacity: 1;
-          }
-          100% {
-            transform: scale(2);
-            opacity: 0;
-          }
-        }
-        body {
-          font-size: 0.9rem;
-        }
-        .page-wrapper .sidebar-wrapper,
-        .sidebar-wrapper .sidebar-brand > a,
-        .sidebar-wrapper .sidebar-dropdown > a:after,
-        .sidebar-wrapper .sidebar-menu .sidebar-dropdown .sidebar-submenu li a:before,
-        .sidebar-wrapper ul li a i,
-        .page-wrapper .page-content,
-        .sidebar-wrapper .sidebar-search input.search-menu,
-        .sidebar-wrapper .sidebar-search .input-group-text,
-        .sidebar-wrapper .sidebar-menu ul li a,
-        #show-sidebar,
-        #close-sidebar {
-          -webkit-transition: all 0.3s ease;
-          -moz-transition: all 0.3s ease;
-          -ms-transition: all 0.3s ease;
-          -o-transition: all 0.3s ease;
-          transition: all 0.3s ease;
-        }
-
-        /*----------------page-wrapper----------------*/
-
-        .page-wrapper {
-          height: 100vh;
-        }
-
-        .page-wrapper .theme {
-          width: 40px;
-          height: 40px;
-          display: inline-block;
-          border-radius: 4px;
-          margin: 2px;
-        }
-
-        .page-wrapper .theme.chiller-theme {
-          background: #1e2229;
-        }
-
-        /*----------------toggeled sidebar----------------*/
-
-        .page-wrapper.toggled .sidebar-wrapper {
-          left: 0px;
-        }
-
-        @media screen and (min-width: 768px) {
-          .page-wrapper.toggled .page-content {
-            padding-left: 300px;
-          }
-        }
-        /*----------------show sidebar button----------------*/
-        #show-sidebar {
-          position: fixed;
-          left: 0;
-          top: 10px;
-          border-radius: 0 4px 4px 0px;
-          width: 35px;
-          transition-delay: 0.3s;
-        }
-        .page-wrapper.toggled #show-sidebar {
-          left: -40px;
-        }
-        /*----------------sidebar-wrapper----------------*/
-
-        .sidebar-wrapper {
-          width: 260px;
-          height: 100%;
-          max-height: 100%;
-          position: fixed;
-          top: 0;
-          left: -300px;
-          z-index: 999;
-        }
-
-        .sidebar-wrapper ul {
-          list-style-type: none;
-          padding: 0;
-          margin: 0;
-        }
-
-        .sidebar-wrapper a {
-          text-decoration: none;
-        }
-
-        /*----------------sidebar-content----------------*/
-
-        .sidebar-content {
-          max-height: calc(100% - 30px);
-          height: calc(100% - 30px);
-          overflow-y: auto;
-          position: relative;
-        }
-
-        .sidebar-content.desktop {
-          overflow-y: hidden;
-        }
-
-        /*--------------------sidebar-brand----------------------*/
-
-        .sidebar-wrapper .sidebar-brand {
-          padding: 10px 20px;
-          display: flex;
-          align-items: center;
-        }
-
-        .sidebar-wrapper .sidebar-brand > a {
-          text-transform: uppercase;
-          font-weight: bold;
-          flex-grow: 1;
-        }
-
-        .sidebar-wrapper .sidebar-brand #close-sidebar {
-          cursor: pointer;
-          font-size: 20px;
-        }
-        /*--------------------sidebar-header----------------------*/
-
-        .sidebar-wrapper .sidebar-header {
-          padding: 20px;
-          overflow: hidden;
-        }
-
-        .sidebar-wrapper .sidebar-header .user-pic {
-          float: left;
-          width: 60px;
-          padding: 2px;
-          border-radius: 12px;
-          margin-right: 15px;
-          overflow: hidden;
-        }
-
-        .sidebar-wrapper .sidebar-header .user-pic img {
-          object-fit: cover;
-          height: 100%;
-          width: 100%;
-        }
-
-        .sidebar-wrapper .sidebar-header .user-info {
-          float: left;
-        }
-
-        .sidebar-wrapper .sidebar-header .user-info > span {
-          display: block;
-        }
-
-        .sidebar-wrapper .sidebar-header .user-info .user-role {
-          font-size: 12px;
-        }
-
-        .sidebar-wrapper .sidebar-header .user-info .user-status {
-          font-size: 11px;
-          margin-top: 4px;
-        }
-
-        .sidebar-wrapper .sidebar-header .user-info .user-status i {
-          font-size: 8px;
-          margin-right: 4px;
-          color: #5cb85c;
-        }
-
-        /*-----------------------sidebar-search------------------------*/
-
-        .sidebar-wrapper .sidebar-search > div {
-          padding: 10px 20px;
-        }
-
-        /*----------------------sidebar-menu-------------------------*/
-
-        .sidebar-wrapper .sidebar-menu {
-          padding-bottom: 10px;
-        }
-
-        .sidebar-wrapper .sidebar-menu .header-menu span {
-          font-weight: bold;
-          font-size: 14px;
-          padding: 15px 20px 5px 20px;
-          display: inline-block;
-        }
-
-        .sidebar-wrapper .sidebar-menu ul li a {
-          display: inline-block;
-          width: 100%;
-          text-decoration: none;
-          position: relative;
-          padding: 8px 30px 8px 20px;
-        }
-
-        .sidebar-wrapper .sidebar-menu ul li a i {
-          margin-right: 10px;
-          font-size: 12px;
-          width: 30px;
-          height: 30px;
-          line-height: 30px;
-          text-align: center;
-          border-radius: 4px;
-        }
-
-        .sidebar-wrapper .sidebar-menu ul li a:hover > i::before {
-          display: inline-block;
-          animation: swing ease-in-out 0.5s 1 alternate;
-        }
-
-        .sidebar-wrapper .sidebar-menu .sidebar-dropdown > a:after {
-          font-family: "Font Awesome 5 Free";
-          font-weight: 900;
-          content: "\f105";
-          font-style: normal;
-          display: inline-block;
-          font-style: normal;
-          font-variant: normal;
-          text-rendering: auto;
-          -webkit-font-smoothing: antialiased;
-          -moz-osx-font-smoothing: grayscale;
-          text-align: center;
-          background: 0 0;
-          position: absolute;
-          right: 15px;
-          top: 14px;
-        }
-
-        .sidebar-wrapper .sidebar-menu .sidebar-dropdown .sidebar-submenu ul {
-          padding: 5px 0;
-        }
-
-        .sidebar-wrapper .sidebar-menu .sidebar-dropdown .sidebar-submenu li {
-          padding-left: 25px;
-          font-size: 13px;
-        }
-
-        .sidebar-wrapper .sidebar-menu .sidebar-dropdown .sidebar-submenu li a:before {
-          content: "\f111";
-          font-family: "Font Awesome 5 Free";
-          font-weight: 400;
-          font-style: normal;
-          display: inline-block;
-          text-align: center;
-          text-decoration: none;
-          -webkit-font-smoothing: antialiased;
-          -moz-osx-font-smoothing: grayscale;
-          margin-right: 10px;
-          font-size: 8px;
-        }
-
-        .sidebar-wrapper .sidebar-menu ul li a span.label,
-        .sidebar-wrapper .sidebar-menu ul li a span.badge {
-          float: right;
-          margin-top: 8px;
-          margin-left: 5px;
-        }
-
-        .sidebar-wrapper .sidebar-menu .sidebar-dropdown .sidebar-submenu li a .badge,
-        .sidebar-wrapper .sidebar-menu .sidebar-dropdown .sidebar-submenu li a .label {
-          float: right;
-          margin-top: 0px;
-        }
-
-        .sidebar-wrapper .sidebar-menu .sidebar-submenu {
-          display: none;
-        }
-
-        .sidebar-wrapper .sidebar-menu .sidebar-dropdown.active > a:after {
-          transform: rotate(90deg);
-          right: 17px;
-        }
-
-        /*--------------------------side-footer------------------------------*/
-
-        .sidebar-footer {
-          position: absolute;
-          width: 100%;
-          bottom: 0;
-          display: flex;
-        }
-
-        .sidebar-footer > a {
-          flex-grow: 1;
-          text-align: center;
-          height: 30px;
-          line-height: 30px;
-          position: relative;
-        }
-
-        .sidebar-footer > a .notification {
-          position: absolute;
-          top: 0;
-        }
-
-        .badge-sonar {
-          display: inline-block;
-          background: #980303;
-          border-radius: 50%;
-          height: 8px;
-          width: 8px;
-          position: absolute;
-          top: 0;
-        }
-
-        .badge-sonar:after {
-          content: "";
-          position: absolute;
-          top: 0;
-          left: 0;
-          border: 2px solid #980303;
-          opacity: 0;
-          border-radius: 50%;
-          width: 100%;
-          height: 100%;
-          animation: sonar 1.5s infinite;
-        }
-
-        /*--------------------------page-content-----------------------------*/
-
-        .page-wrapper .page-content {
-          display: inline-block;
-          width: 100%;
-          padding-left: 0px;
-          padding-top: 20px;
-        }
-
-        .page-wrapper .page-content > div {
-          padding: 20px 40px;
-        }
-
-        .page-wrapper .page-content {
-          overflow-x: hidden;
-        }
-
-        /*------scroll bar---------------------*/
-
-        ::-webkit-scrollbar {
-          width: 5px;
-          height: 7px;
-        }
-        ::-webkit-scrollbar-button {
-          width: 0px;
-          height: 0px;
-        }
-        ::-webkit-scrollbar-thumb {
-          background: #525965;
-          border: 0px none #ffffff;
-          border-radius: 0px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-          background: #525965;
-        }
-        ::-webkit-scrollbar-thumb:active {
-          background: #525965;
-        }
-        ::-webkit-scrollbar-track {
-          background: transparent;
-          border: 0px none #ffffff;
-          border-radius: 50px;
-        }
-        ::-webkit-scrollbar-track:hover {
-          background: transparent;
-        }
-        ::-webkit-scrollbar-track:active {
-          background: transparent;
-        }
-        ::-webkit-scrollbar-corner {
-          background: transparent;
-        }
-
-
-        /*-----------------------------chiller-theme-------------------------------------------------*/
-
-        .chiller-theme .sidebar-wrapper {
-            background: #31353D;
-        }
-
-        .chiller-theme .sidebar-wrapper .sidebar-header,
-        .chiller-theme .sidebar-wrapper .sidebar-search,
-        .chiller-theme .sidebar-wrapper .sidebar-menu {
-            border-top: 1px solid #3a3f48;
-        }
-
-        .chiller-theme .sidebar-wrapper .sidebar-search input.search-menu,
-        .chiller-theme .sidebar-wrapper .sidebar-search .input-group-text {
-            border-color: transparent;
-            box-shadow: none;
-        }
-
-        .chiller-theme .sidebar-wrapper .sidebar-header .user-info .user-role,
-        .chiller-theme .sidebar-wrapper .sidebar-header .user-info .user-status,
-        .chiller-theme .sidebar-wrapper .sidebar-search input.search-menu,
-        .chiller-theme .sidebar-wrapper .sidebar-search .input-group-text,
-        .chiller-theme .sidebar-wrapper .sidebar-brand>a,
-        .chiller-theme .sidebar-wrapper .sidebar-menu ul li a,
-        .chiller-theme .sidebar-footer>a {
-            color: #818896;
-        }
-
-        .chiller-theme .sidebar-wrapper .sidebar-menu ul li:hover>a,
-        .chiller-theme .sidebar-wrapper .sidebar-menu .sidebar-dropdown.active>a,
-        .chiller-theme .sidebar-wrapper .sidebar-header .user-info,
-        .chiller-theme .sidebar-wrapper .sidebar-brand>a:hover,
-        .chiller-theme .sidebar-footer>a:hover i {
-            color: #b8bfce;
-        }
-
-        .page-wrapper.chiller-theme.toggled #close-sidebar {
-            color: #bdbdbd;
-        }
-
-        .page-wrapper.chiller-theme.toggled #close-sidebar:hover {
-            color: #ffffff;
-        }
-
-        .chiller-theme .sidebar-wrapper ul li:hover a i,
-        .chiller-theme .sidebar-wrapper .sidebar-dropdown .sidebar-submenu li a:hover:before,
-        .chiller-theme .sidebar-wrapper .sidebar-search input.search-menu:focus+span,
-        .chiller-theme .sidebar-wrapper .sidebar-menu .sidebar-dropdown.active a i {
-            color: #16c7ff;
-            text-shadow:0px 0px 10px rgba(22, 199, 255, 0.5);
-        }
-
-        .chiller-theme .sidebar-wrapper .sidebar-menu ul li a i,
-        .chiller-theme .sidebar-wrapper .sidebar-menu .sidebar-dropdown div,
-        .chiller-theme .sidebar-wrapper .sidebar-search input.search-menu,
-        .chiller-theme .sidebar-wrapper .sidebar-search .input-group-text {
-            background: #3a3f48;
-        }
-
-        .chiller-theme .sidebar-wrapper .sidebar-menu .header-menu span {
-            color: #6c7b88;
-        }
-
-        .chiller-theme .sidebar-footer {
-            background: #3a3f48;
-            box-shadow: 0px -1px 5px #282c33;
-            border-top: 1px solid #464a52;
-        }
-
-        .chiller-theme .sidebar-footer>a:first-child {
-            border-left: none;
-        }
-
-        .chiller-theme .sidebar-footer>a:last-child {
-            border-right: none;
-        }
-
-  </style> 
-
 </head>
 
-<body>
-<div class="page-wrapper chiller-theme toggled">
-  <a id="show-sidebar" class="btn btn-sm btn-dark" href="#">
-    <i class="fas fa-bars"></i>
-  </a>
-  <nav id="sidebar" class="sidebar-wrapper">
-    <div class="sidebar-content">
-      <div class="sidebar-brand">
-        <a href="#">FYNS | Finance System</a>
-        <div id="close-sidebar">
-          <i class="fas fa-times"></i>
-        </div>
-      </div>
-      <div class="sidebar-header">
-        <div class="user-pic">
-          <!-- <img class="img-responsive img-rounded" src=""
-            alt="User picture"> -->
-        </div>
-        <div class="user-info">
-          <span class="user-name">User Name
-            <strong></strong>
-          </span>
-          <!-- <span class="user-role">Administrator</span> -->
-          <!-- <span class="user-status">
-            <i class="fa fa-circle"></i>
-            <span>Online</span>
-          </span> -->
-        </div>
-      </div>
+<body class="g-sidenav-show  bg-gray-200">
+  <aside class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3   bg-gradient-dark" id="sidenav-main">
+    <div class="sidenav-header">
+      <i class="fas fa-times p-3 cursor-pointer text-white opacity-5 position-absolute end-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav"></i>
+      <a class="navbar-brand m-0" href=" https://demos.creative-tim.com/material-dashboard/pages/dashboard " target="_blank">
+        <img src=<?php echo base_url('application/views/dashboard/assets/img/logo-ct.png')?> class="navbar-brand-img h-100" alt="main_logo">
+        <span class="ms-1 font-weight-bold text-white">FYNS | Finance System</span>
+      </a>
+    </div>
+    <hr class="horizontal light mt-0 mb-2">
+    <div class="collapse navbar-collapse  w-auto " id="sidenav-collapse-main">
+      <ul class="navbar-nav">
 
-      <!-- sidebar-header  -->
+        <li class="nav-item">
+          <a class="nav-link text-white" href=<?php echo base_url('dashboard/index/')?> id="dashboard" onclick="changeTab(dashboard)">
+            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="material-icons opacity-10">dashboard</i>
+            </div>
+            <span class="nav-link-text ms-1">Dashboard</span>
+          </a>
+        </li>
 
-      <!-- <div class="sidebar-search">
-        <div>
-          <div class="input-group">
-            <input type="text" class="form-control search-menu" placeholder="Search...">
-            <div class="input-group-append">
-              <span class="input-group-text">
-                <i class="fa fa-search" aria-hidden="true"></i>
-              </span>
+        <!-- <li class="nav-item">
+          <a class="nav-link text-white" href=<?php //echo base_url('dashboard/index2/')?>>
+            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="material-icons opacity-10">dashboard</i>
+            </div>
+            <span class="nav-link-text ms-1">Dashboard Old</span>
+          </a>
+        </li> -->
+
+        <li class="nav-item">
+          <a class="nav-link text-white" href=<?php echo base_url('dashboard/lancamentos/')?> id="lancamentos" onclick="changeTab(lancamentos)">
+            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="material-icons opacity-10">table_view</i>
+            </div>
+            <span class="nav-link-text ms-1">Lançamentos</span>
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link text-white" href=<?php echo base_url('dashboard/data/')?> id="config" onclick="changeTab(config)">
+            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="material-icons opacity-10">table_view</i>
+            </div>
+            <span class="nav-link-text ms-1">Configurações</span>
+          </a>
+        </li>
+
+        
+      </ul>
+    </div>
+    <div class="sidenav-footer position-absolute w-100 bottom-0 ">
+      <div class="mx-3">
+        <a class="btn bg-gradient-primary mt-4 w-100" href="https://www.creative-tim.com/product/material-dashboard-pro?ref=sidebarfree" type="button">Upgrade to pro</a>
+      </div>
+    </div>
+  </aside>
+  <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
+    <!-- Navbar -->
+    <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl" id="navbarBlur" data-scroll="true">
+      <div class="container-fluid py-1 px-3">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
+            <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="javascript:;">Pages</a></li>
+            <li class="breadcrumb-item text-sm text-dark active" aria-current="page" id="current_page">Dashboard</li>
+          </ol>
+          <h6 class="font-weight-bolder mb-0">Dashboard</h6>
+        </nav>
+        <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
+          <div class="ms-md-auto pe-md-3 d-flex align-items-center">
+            <div class="input-group input-group-outline">
+              <label class="form-label">Type here...</label>
+              <input type="text" class="form-control">
             </div>
           </div>
-        </div>
-      </div> -->
-
-      <!-- sidebar-search  -->
-      <div class="sidebar-menu">
-
-        <ul>
-          
-          <li class="header-menu">
-            <span>General</span>
-          </li>
-
-          <li class="sidebar-dropdown">
-            <a href="#">
-              <i class="fa fa-tachometer-alt"></i>
-              <span>Dashboard</span>
-              <!-- <span class="badge badge-pill badge-warning">New</span> -->
-            </a>
-            <div class="sidebar-submenu">
-              <ul>
-                <li>
-                  <a href="<?php echo base_url('dashboard/index/')?>"> 
-                    Resumo Geral
-                    <!-- <span class="badge badge-pill badge-success">Pro</span> -->
+          <ul class="navbar-nav  justify-content-end">
+            <li class="nav-item d-flex align-items-center">
+              <a class="btn btn-outline-primary btn-sm mb-0 me-3" target="_blank" href="https://www.creative-tim.com/builder/material?ref=navbar-dashboard">Online Builder</a>
+            </li>
+            <li class="nav-item d-flex align-items-center">
+              <a href="../pages/sign-in.html" class="nav-link text-body font-weight-bold px-0">
+                <i class="fa fa-user me-sm-1"></i>
+                <span class="d-sm-inline d-none">Sign In</span>
+              </a>
+            </li>
+            <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
+              <a href="javascript:;" class="nav-link text-body p-0" id="iconNavbarSidenav">
+                <div class="sidenav-toggler-inner">
+                  <i class="sidenav-toggler-line"></i>
+                  <i class="sidenav-toggler-line"></i>
+                  <i class="sidenav-toggler-line"></i>
+                </div>
+              </a>
+            </li>
+            <li class="nav-item px-3 d-flex align-items-center">
+              <a href="javascript:;" class="nav-link text-body p-0">
+                <i class="fa fa-cog fixed-plugin-button-nav cursor-pointer"></i>
+              </a>
+            </li>
+            <li class="nav-item dropdown pe-2 d-flex align-items-center">
+              <a href="javascript:;" class="nav-link text-body p-0" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="fa fa-bell cursor-pointer"></i>
+              </a>
+              <ul class="dropdown-menu  dropdown-menu-end  px-2 py-3 me-sm-n4" aria-labelledby="dropdownMenuButton">
+                <li class="mb-2">
+                  <a class="dropdown-item border-radius-md" href="javascript:;">
+                    <div class="d-flex py-1">
+                      <div class="my-auto">
+                        <img src="../dashboard/assets/img/team-2.jpg" class="avatar avatar-sm  me-3 ">
+                      </div>
+                      <div class="d-flex flex-column justify-content-center">
+                        <h6 class="text-sm font-weight-normal mb-1">
+                          <span class="font-weight-bold">New message</span> from Laur
+                        </h6>
+                        <p class="text-xs text-secondary mb-0">
+                          <i class="fa fa-clock me-1"></i>
+                          13 minutes ago
+                        </p>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <li class="mb-2">
+                  <a class="dropdown-item border-radius-md" href="javascript:;">
+                    <div class="d-flex py-1">
+                      <div class="my-auto">
+                        <img src="../dashboard/assets/img/small-logos/logo-spotify.svg" class="avatar avatar-sm bg-gradient-dark  me-3 ">
+                      </div>
+                      <div class="d-flex flex-column justify-content-center">
+                        <h6 class="text-sm font-weight-normal mb-1">
+                          <span class="font-weight-bold">New album</span> by Travis Scott
+                        </h6>
+                        <p class="text-xs text-secondary mb-0">
+                          <i class="fa fa-clock me-1"></i>
+                          1 day
+                        </p>
+                      </div>
+                    </div>
                   </a>
                 </li>
                 <li>
-                  <a href="#">Banco 2</a>
+                  <a class="dropdown-item border-radius-md" href="javascript:;">
+                    <div class="d-flex py-1">
+                      <div class="avatar avatar-sm bg-gradient-secondary  me-3  my-auto">
+                        <svg width="12px" height="12px" viewBox="0 0 43 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                          <title>credit-card</title>
+                          <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                            <g transform="translate(-2169.000000, -745.000000)" fill="#FFFFFF" fill-rule="nonzero">
+                              <g transform="translate(1716.000000, 291.000000)">
+                                <g transform="translate(453.000000, 454.000000)">
+                                  <path class="color-background" d="M43,10.7482083 L43,3.58333333 C43,1.60354167 41.3964583,0 39.4166667,0 L3.58333333,0 C1.60354167,0 0,1.60354167 0,3.58333333 L0,10.7482083 L43,10.7482083 Z" opacity="0.593633743"></path>
+                                  <path class="color-background" d="M0,16.125 L0,32.25 C0,34.2297917 1.60354167,35.8333333 3.58333333,35.8333333 L39.4166667,35.8333333 C41.3964583,35.8333333 43,34.2297917 43,32.25 L43,16.125 L0,16.125 Z M19.7083333,26.875 L7.16666667,26.875 L7.16666667,23.2916667 L19.7083333,23.2916667 L19.7083333,26.875 Z M35.8333333,26.875 L28.6666667,26.875 L28.6666667,23.2916667 L35.8333333,23.2916667 L35.8333333,26.875 Z"></path>
+                                </g>
+                              </g>
+                            </g>
+                          </g>
+                        </svg>
+                      </div>
+                      <div class="d-flex flex-column justify-content-center">
+                        <h6 class="text-sm font-weight-normal mb-1">
+                          Payment successfully completed
+                        </h6>
+                        <p class="text-xs text-secondary mb-0">
+                          <i class="fa fa-clock me-1"></i>
+                          2 days
+                        </p>
+                      </div>
+                    </div>
+                  </a>
                 </li>
               </ul>
-            </div>
-          </li>
-
-          <li>
-            <a href="<?php echo base_url('dashboard/index/')?>">
-              <i class="fa fa-folder"></i>
-              <span>Dashboard</span>
-            </a>
-          </li>
-
-          <li>
-            <a href="<?php echo base_url('dashboard/lancamentos/')?>">
-              <i class="fa fa-folder"></i>
-              <span>Lançamentos</span>
-            </a>
-          </li>
-          
-          <li class="header-menu">
-            <span>Extra</span>
-          </li>
-
-          <li>
-            <a href="#">
-              <i class="fa fa-book"></i>
-              <span>Perfil</span>
-              <!-- <span class="badge badge-pill badge-primary">Beta</span> -->
-            </a>
-          </li>
-
-          <li>
-            <a href="#">
-              <i class="fa fa-calendar"></i>
-              <span>Configurações</span>
-            </a>
-          </li>
-
-          <li>
-            <a href="#">
-              <i class="fa fa-folder"></i>
-              <span>Creditos</span>
-            </a>
-          </li>
-
-        </ul>
-
+            </li>
+          </ul>
+        </div>
       </div>
-      <!-- sidebar-menu  -->
-    </div>
-    <!-- sidebar-content  -->
-    <div class="sidebar-footer">
-      <a href="#">
-        <i class="fa fa-bell"></i>
-        <span class="badge badge-pill badge-warning notification">3</span>
-      </a>
-      <a href="#">
-        <i class="fa fa-envelope"></i>
-        <span class="badge badge-pill badge-success notification">7</span>
-      </a>
-      <a href="#">
-        <i class="fa fa-cog"></i>
-        <span class="badge-sonar"></span>
-      </a>
-      <a href="#">
-        <i class="fa fa-power-off"></i>
-      </a>
-    </div>
-  </nav>
-  <!-- sidebar-wrapper  -->
-  <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-        <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-        <!------ Include the above in your HEAD tag ---------->
+    </nav>
+
+    <script>
+      function changeTab(name){
+        document.getElementById(name).classList.replace('nav-link text-white','nav-link text-white active bg-gradient-primary');
+      }
+    </script>

@@ -265,9 +265,9 @@
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-<main class="page-content">
-    <div id="" class="row">
+<div class="container-fluid py-4">     
+      <div class="row mb-4">
+      <div id="" class="row">
       <div class="col-md-12">
         <div class="card">
           <div class="wrapper fadeInDown">
@@ -296,22 +296,22 @@
                 <br>
                 <div id="ocultar" style="display:none">
                   <div class="col-lg-12 form-group fadeIn second" id="CategoriaDespesa">
-                    <label for="categorias" class="sr-only">CategoriaDespesa</label>
-                    <select id="categorias" name="categorias" class="form-control">
+                    <label for="categorias_desp" class="sr-only">CategoriaDespesa</label>
+                    <select id="categorias_desp" name="categorias_desp" class="form-control">
                       <?php 
-                        foreach ($categorias_despesas as $categoria){
-                          echo '<option id="r_d_categoria" value="'.$categoria->id.'">'.$categoria->nome.'</option>';
+                        foreach ($categoria_lancamentos as $categoria){
+                          echo '<option id="categoria_id" value="'.$categoria->id.'">'.$categoria->nome.'</option>';
                         }
                       ?>
                     </select>
                   </div>
 
                   <div class="col-lg-12 form-group fadeIn second" id="CategoriaReceita">
-                    <label for="categorias" class="sr-only">CategoriaReceita</label>
-                    <select id="categorias" name="categorias" class="form-control">
+                    <label for="categoria_receita" class="sr-only">CategoriaReceita</label>
+                    <select id="categoria_receita" name="categoria_receita" class="form-control">
                       <?php 
                         foreach ($categorias_receitas as $categoria){
-                          echo '<option id="r_d_categoria" value="'.$categoria->id.'">'.$categoria->nome.'</option>';
+                          echo '<option id="categoria_id" value="'.$categoria->id.'">'.$categoria->nome.'</option>';
                         }
                       ?>
                     </select>
@@ -332,16 +332,7 @@
 
                   <br>
 
-                  <div class="col-lg-12 form-group fadeIn second" id="categoria_despesa">
-                    <label for="categorias" class="sr-only">categorias</label>
-                    <select id="categorias" name="categorias" class="form-control">
-                      <?php 
-                        foreach ($categoria_lancamentos as $categoria){
-                          echo '<option id="categoria_id" value="'.$categoria->id.'">'.$categoria->nome.'</option>';
-                        }
-                      ?>
-                    </select>
-                  </div>
+                  
 
                   <br>
 
@@ -381,10 +372,10 @@
           </div>
         </div> 
       </div>
-    </div>
+        
+      </div>
 
-      <hr> <!-- Separadr -->
-<script>
+      <script>
   var r_d_categoria = 0;
 
   function getSelectedOption(sel) {
@@ -412,17 +403,13 @@
 
     if (tipo_id == 1) {
       document.getElementById('CategoriaDespesa').style.display = 'none';
-      document.getElementById('categoria_despesa').style.display = 'none';
-      var r_d_categoria = document.getElementById('r_d_categoria').value;
     }
     if (tipo_id == 2) {
       document.getElementById('CategoriaReceita').style.display = 'none';
-      var r_d_categoria = document.getElementById('r_d_categoria').value;
     }
     if (tipo_id == 3) {
       document.getElementById('CategoriaReceita').style.display = 'none';
       document.getElementById('CategoriaDespesa').style.display = 'none';
-      var r_d_categoria = document.getElementById('r_d_categoria').value;
     }
   }
 
@@ -437,19 +424,25 @@
     }
 
     var bancos = document.getElementById('bancos');
-    var categorias = document.getElementById('categorias');
+    //var categorias = document.getElementById('categorias');
 
     var id_user   = 1;
     var id_banco  = getSelectedOption(bancos).value;
     var data      = document.getElementById('data').value;
     var valor     = document.getElementById('valor').value;
     var descricao = document.getElementById('descricao').value;
-    var lancamento_categoria = getSelectedOption(categorias).value;
 
-    //console.log(id_user, id_banco, tipo_id, r_d_categoria, lancamento_categoria, data, valor, descricao);
+    var categoria_receita = document.getElementById('categoria_receita');
+    var lancamento_categoria = getSelectedOption(categoria_receita).value;
+    if (lancamento_categoria == 0) {
+      var categorias_desp = document.getElementById('categorias_desp');
+      var lancamento_categoria = getSelectedOption(categorias_desp).value;
+    }
+
+    console.log(id_user, id_banco, tipo_id, lancamento_categoria, data, valor, descricao);
 
     $.ajaxSetup({async:false});
-    $.post("<?php echo site_url('dashboard/lancar') ?>",{id_user:id_user, id_banco:id_banco, lancamento_tipo:tipo_id, r_d_categoria:r_d_categoria, lancamento_categoria:lancamento_categoria, data:data, valor:valor, descricao:descricao},
+    $.post("<?php echo site_url('dashboard/lancar') ?>",{id_user:id_user, id_banco:id_banco, lancamento_tipo:tipo_id, lancamento_categoria:lancamento_categoria, data:data, valor:valor, descricao:descricao},
         function(data, status) {
             if (status) {
               swal({

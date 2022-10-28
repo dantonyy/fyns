@@ -74,6 +74,15 @@ class Dashboard_model extends CI_Model {
     public function get_categoria_lancamentos(){
         $dados = NULL;
         $this->db->from('categoria_lancamentos');
+        $this->db->where('id >', 0);
+        $dados = $this->db->get()->result();
+        return $dados;
+
+    }
+    public function get_categoria_lancamentos2(){
+        $dados = NULL;
+        $this->db->from('categoria_lancamentos');
+        $this->db->where('id >=', 7);
         $dados = $this->db->get()->result();
         return $dados;
     }
@@ -81,6 +90,7 @@ class Dashboard_model extends CI_Model {
     public function get_categoria_despesas(){
         $dados = NULL;
         $this->db->from('categoria_despesas');
+        $this->db->where('id >', 0);
         $dados = $this->db->get()->result();
         return $dados;
     }
@@ -99,13 +109,12 @@ class Dashboard_model extends CI_Model {
         return $dados;
     }
     
-    public function lancar($id_user, $id_banco, $lancamento_tipo, $r_d_categoria, $lancamento_categoria, $data, $valor, $descricao){
+    public function lancar($id_user, $id_banco, $lancamento_tipo, $lancamento_categoria, $data, $valor, $descricao){
 
         $dados = array(
             'id_user' => $id_user,
             'id_banco'  => $id_banco,
             'lancamento_tipo' => $lancamento_tipo,
-            'r_d_categoria' => $r_d_categoria,
             'lancamento_categoria' => $lancamento_categoria,
             'data' => $data,
             'valor' => $valor,
@@ -173,7 +182,7 @@ class Dashboard_model extends CI_Model {
         $this->db->where('data >=', $data_inicial);
         $this->db->where('data <=', $data_final);
         $this->db->order_by("data", "desc");
-        $this->db->limit(5,0);
+        $this->db->limit(7,0);
 
         return $this->db->get()->result();
     }
@@ -193,7 +202,7 @@ class Dashboard_model extends CI_Model {
         $this->db->where('data >=', $data_inicial);
         $this->db->where('data <=', $data_final);
         $this->db->order_by("data", "desc");
-        $this->db->limit(5,0);
+        $this->db->limit(7,0);
 
         return $this->db->get()->result();
     }
