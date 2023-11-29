@@ -1,0 +1,302 @@
+body{
+    background-color: #f9fbfd;
+}
+
+@font-face {
+    font-family: 'Dongle';
+    src: url(<?php echo base_url("assets/fonts/dongle.ttf");?>);
+}
+
+.dongle{
+    font-family: 'Dongle', sans-serif !important;
+}
+
+@font-face {
+    font-family: 'Dancing Script';
+    src: url(<?php echo base_url("assets/fonts/DancingScript.ttf");?>) format('truetype');
+}
+
+.dancingScript{
+    font-family: 'Dancing Script', cursive !important;
+}
+  
+.fundoCapsula{
+    border-radius: 5px;
+    background-color: #fff;
+    margin-bottom: 25px;
+    -webkit-box-shadow: 2px 6px 15px 0 rgba(69,65,78,.2);
+    -moz-box-shadow: 2px 6px 15px 0 rgba(69,65,78,.2);
+    box-shadow: 2px 6px 15px 0 rgba(69,65,78,.2);
+    border: 0;
+}
+
+.modoEscuro .fundoCapsula{
+    border-radius: 5px;
+    background-color: #fff;
+    margin-bottom: 10px;
+    -webkit-box-shadow: 2px 6px 15px 0 rgba(0,0,0,.2);
+    -moz-box-shadow: 2px 6px 15px 0 rgba(0,0,0,.2);
+    box-shadow: 2px 6px 15px 0 rgba(0,0,0,.2);
+    border: 0;
+}
+
+.fundoCapsulaApresentacao{
+    border-radius: 5px;
+    /* background-color: #ffffff06; */
+    margin-bottom: 25px;
+    box-shadow: outset 20px clamp(1px, 0.4vw, 6.4px) clamp(1px, 0.4vw, 6.4px) clamp(1px, 0.15vw, 3px) rgba(0, 0, 0, 0.2) !important;
+    border: 0;
+}
+
+
+.modoEscuro{
+    background-color: #202327 !important;
+    color: white;
+    /* color: #000000d5; */
+}
+        
+        
+/* Modo Dark para sweetAlert */
+.bg-dark .swal2-modal{
+    background-color: #212529;
+}
+
+.bg-dark .swal2-modal{
+    background-color: #212529;
+}
+
+.bg-dark .swal2-html-container , .bg-dark .swal2-title{
+    color: #ced4da;
+}
+
+@font-face {
+    font-family: 'Dongle';
+    src: url(<?php echo base_url("assets/fonts/dongle.ttf");?>);
+}
+
+body{
+    background: #f9fbfd;
+}
+
+.tituloPaginaConfiguracoes{
+    color: #048B8B;
+    font-size: clamp(1px, 1rem + 1.2vw, 16px);
+}
+
+.hrConfiguracoes{
+    border: 1px solid rgba(128, 128, 128, 0.40);
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+
+.textoAlterarFoto{
+    color: #67748e !important;
+    font-size: clamp(1px, 1.3rem + 1.3vw, 20px);
+    margin-left: auto;
+    margin-right: auto;
+    background-size: 150%;
+    background-position-x: 25%;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    transition: all 0.15s ease-in;
+}
+
+.modoEscuro .textoAlterarFoto {
+    color: #adb5bd !important;
+}
+
+.modoEscuro .fundoCapsula {
+    margin-bottom: 25px;
+
+    background-color: #21252999;
+}
+
+.corPadraoTexto{
+    font-family: 'Dongle', sans-serif;
+    color: #048B8B;
+}
+
+.textoSecundario{
+    font-family: 'Dongle', sans-serif;
+    font-size: clamp(0.8em, 0.8em + 1.6vw, 18px);
+    color: #6c757d;
+}
+
+.modoEscuro .textoSecundario{
+    font-family: 'Dongle', sans-serif;
+    color: #ced4da;
+}
+
+.quadradoIcone{
+    height: 2.2rem;
+    width: 2.2rem;
+
+}
+
+.fixacaoInferior {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 11rem);
+    padding: 0px !important;
+    margin: 0px !important;
+}
+
+.secaoPrincipal {
+    height: 100%;
+    width: 100%;
+    overflow-y: auto;
+    background: rgba(4, 139, 139, 0.6);
+    box-shadow: inset 0px 4px 10px rgba(0, 0, 0, 0.22);
+    border-top-right-radius: 32px;
+    border-top-left-radius: 32px;
+}
+
+/* Estilizando a barra de rolagem da secaoPrincipal em navegadores WebKit (Chrome, Safari) */
+.secaoPrincipal::-webkit-scrollbar {
+    width: 4px;
+    border-radius: 4px;
+    padding-left: 6px;
+    /* background-color: rgba(0, 0, 0, 0.5); */
+    background-color: rgba(4, 139, 139, 0.005);
+}
+
+.secaoPrincipal::-webkit-scrollbar-track {
+    /* background-color: #f1f1f1; */
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.secaoPrincipal::-webkit-scrollbar-thumb {
+    /* background-color: #888; */
+    border-radius: 4px;
+    background-color: rgba(4, 139, 139, 1);
+    /* box-shadow: inset 0px 4px 10px rgba(0, 0, 0, 0.5); */
+    box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.4);
+}
+.secaoPrincipal::-webkit-scrollbar-thumb:hover {
+    /* background-color: #555; */
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, 1);
+}
+
+.infoOla{
+    font-size: clamp(1em, 1.4em + 2vw, 26px) !important;
+}
+
+.infoNomePerfil{
+    font-size: clamp(1em, 1.4em + 3vw, 26px) !important;
+}
+
+.modoEscuro .infoNomePerfil{
+    color: #fafafa;
+}
+
+
+.infoPerfil{
+    font-size: clamp(1em, 1em + 1.8vw, 20px) !important;
+}
+
+.configuracoesTexto{
+    margin-top: 1.8rem;
+    font-size: clamp(1em, 1.375rem + 1.2vw, 25px);
+    font-weight: 300;
+    line-height: 1.05;
+}
+
+.modoEscuro .configuracoesTexto{
+    color: #fff;
+}
+
+
+/* Efeitos abrir e fechar menu */
+#efeitoTransparenciaConfiguracoes{
+    position: fixed;
+    z-index: 9998;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+    display: none;
+    animation-name: esmaecer;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+#efeitoTransparenciaConfiguracoes.fechar {
+    animation-name: desesmaecer;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+.modoEscuro #efeitoTransparenciaConfiguracoes{
+    background-color: #000000;
+}
+
+#configuracoesView {
+    position: fixed;
+    z-index: 9999;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+    display: none;
+    animation: emergir 1s forwards;
+}
+
+#configuracoesView.fechar {
+        animation: fechar 1s forwards;
+}
+
+.modoEscuro #configuracoesView{
+        background-color: #202327;
+}
+
+
+@keyframes emergir {
+    from {
+    transform: translate(-100%, 0);
+    }
+    to {
+    transform: translate(0, 0);
+    }
+}
+
+@keyframes fechar {
+    from {
+    transform: translate(0, 0);
+    }
+    to {
+    transform: translate(-100%, 0);
+    }
+}
+
+@keyframes esmaecer {
+    0% {
+    opacity: 0;
+    }
+    100% {
+    opacity: 0.85;
+    }
+}
+
+@keyframes desesmaecer {
+    0% {
+    opacity: 0.85;
+    }
+    100% {
+    opacity: 0;
+    }
+}
+
+@media (min-width: 1199px) {
+    #configuracoesView {
+    width: clamp(350px, 38%, 750px);
+    height: 100vh;
+    }
+}
